@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/ugc-portfolio", "destination": "https://nikkindaeyo.my.canva.site/ugc-portfolio" },
+    { "source": "/ugc-portfolio/:path*", "destination": "https://nikkindaeyo.my.canva.site/ugc-portfolio/:path*" }
+  ]
+}
