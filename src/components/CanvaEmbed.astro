@@ -1,7 +1,9 @@
 ---
 /**
  * Embeds a Canva design. Accepts what Canva's Share → Embed gives you: either the
- * link (https://www.canva.com/design/<id>/<token>/view?embed) or the full <iframe> code.
+ * link (https://www.canva.com/design/<id>/<token>/view?embed) or the full embed code.
+ * When the embed code is pasted, its `padding-top: N%` (the design's height ÷ width)
+ * is used so the whole design shows at its real shape instead of in a scroll box.
  */
 interface Props {
   value: string;
@@ -25,18 +27,20 @@ function toEmbedUrl(raw: string): string | null {
   return url.toString();
 }
 const embedUrl = toEmbedUrl(value);
+const ratio = Number(value.match(/padding-top:\s*([\d.]+)%/)?.[1]) || 0; // height as % of width
+const sized = ratio > 0 && ratio < 5000;
 ---
 
 {
   embedUrl && (
-    <div class="canva-embed">
+    <div class:list={['canva-embed', { 'is-sized': sized }]} style={sized ? `--canva-ratio: ${ratio}%` : undefined}>
       <iframe src={embedUrl} title={title} loading="lazy" allow="fullscreen; autoplay" allowfullscreen />
     </div>
   )
 }
 
 <style>
-  /* breaks out of the 640px text column so the videos get some room */
+  /* breaks out of the 640px text column so the design gets some room */
   .canva-embed {
     position: relative;
     width: min(1000px, calc(100vw - 2rem));
@@ -48,6 +52,11 @@ const embedUrl = toEmbedUrl(value);
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--bg);
+  }
+  /* real shape of the design (from Canva's embed code): the page scrolls, not the frame */
+  .canva-embed.is-sized {
+    height: 0;
+    padding-top: var(--canva-ratio);
   }
   .canva-embed iframe {
     position: absolute;
