@@ -8,8 +8,10 @@
 interface Props {
   value: string;
   title?: string;
+  /** edge-to-edge with no frame, so the design reads as the page itself */
+  fullBleed?: boolean;
 }
-const { value, title = 'Canva design' } = Astro.props;
+const { value, title = 'Canva design', fullBleed = false } = Astro.props;
 
 function toEmbedUrl(raw: string): string | null {
   const src = raw.match(/src=["']([^"']+)["']/)?.[1] ?? raw.trim();
@@ -33,7 +35,7 @@ const sized = ratio > 0 && ratio < 5000;
 
 {
   embedUrl && (
-    <div class:list={['canva-embed', { 'is-sized': sized }]} style={sized ? `--canva-ratio: ${ratio}%` : undefined}>
+    <div class:list={['canva-embed', { 'is-sized': sized, 'is-bleed': fullBleed }]} style={sized ? `--canva-ratio: ${ratio}%` : undefined}>
       <iframe src={embedUrl} title={title} loading="lazy" allow="fullscreen; autoplay" allowfullscreen />
     </div>
   )
@@ -57,6 +59,18 @@ const sized = ratio > 0 && ratio < 5000;
   .canva-embed.is-sized {
     height: 0;
     padding-top: var(--canva-ratio);
+  }
+  /* edge to edge, no card: the design is the page */
+  .canva-embed.is-bleed {
+    width: 100vw;
+    left: 0;
+    transform: none;
+    margin: 0 0 -6rem calc(50% - 50vw); /* also eats the container's bottom padding */
+    border: 0;
+    border-radius: 0;
+  }
+  :global(html:has(.canva-embed.is-bleed)) {
+    overflow-x: clip; /* 100vw includes the scrollbar on desktop; don't let it scroll sideways */
   }
   .canva-embed iframe {
     position: absolute;

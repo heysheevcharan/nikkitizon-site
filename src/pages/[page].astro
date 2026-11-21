@@ -24,9 +24,35 @@ const { Content } = await render(page);
   title={page.data.title}
   description={page.data.description ?? `${page.data.title} — ${SITE.name}`}
 >
-  <h1>{page.data.title}</h1>
-  <div class="prose" style="margin-top: 1.5rem;">
-    <Content />
-  </div>
-  {page.data.canvaEmbed && <CanvaEmbed value={page.data.canvaEmbed} title={`${page.data.title} — ${SITE.name}`} />}
+  {
+    page.data.canvaEmbed ? (
+      <>
+        <h1 class="visually-hidden">{page.data.title}</h1>
+        {page.body?.trim() && (
+          <div class="prose" style="margin-top: 1.5rem;">
+            <Content />
+          </div>
+        )}
+        <CanvaEmbed value={page.data.canvaEmbed} title={`${page.data.title} — ${SITE.name}`} fullBleed />
+      </>
+    ) : (
+      <>
+        <h1>{page.data.title}</h1>
+        <div class="prose" style="margin-top: 1.5rem;">
+          <Content />
+        </div>
+      </>
+    )
+  }
 </Base>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>
