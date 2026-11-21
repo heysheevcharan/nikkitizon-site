@@ -1,0 +1,62 @@
+---
+import SEO from '../components/SEO.astro';
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  pubDate?: Date;
+}
+
+const { title, description, image, type, pubDate } = Astro.props;
+// the homepage passes a full-bleed 3D hero (which carries its own nav); every other page is unchanged
+const hasHero = Astro.slots.has('hero');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      pubDate={pubDate}
+    />
+  </head>
+  <body class={hasHero ? 'homepage' : undefined}>
+    {
+      hasHero ? (
+        <>
+          <slot name="hero" />
+          <div class="site-content">
+            <div class="container home-below">
+              <main>
+                <slot />
+              </main>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div class="container">
+          <Nav />
+          <main>
+            <slot />
+          </main>
+        </div>
+      )
+    }
+  </body>
+</html>

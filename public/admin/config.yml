@@ -1,0 +1,149 @@
+backend:
+  name: github
+  repo: heysheevcharan/nikkitizon-site
+  branch: main
+  base_url: https://decap-proxy.sheevstartup.workers.dev
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  # ── Tags ─────────────────────────────────────────────────────────────────────
+  - name: tags
+    label: "Tags"
+    label_singular: Tag
+    folder: src/content/tags
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: "Tag name exactly as it appears on posts (e.g. AI, b2b, self-discovery)"
+
+  # ── Home page — personal details + bio ──────────────────────────────────────
+  - name: home
+    label: "Home (/)"
+    files:
+      - name: home
+        label: Home Page
+        file: src/content/home/home.mdx
+        fields:
+          - label: Your Name
+            name: name
+            widget: string
+          - label: Tagline
+            name: tagline
+            widget: string
+            hint: "Shown below your name, e.g. 'writer · designer'"
+          - label: Email
+            name: email
+            widget: string
+            required: false
+          - label: GitHub URL
+            name: github
+            widget: string
+            required: false
+          - label: X / Twitter URL
+            name: twitter
+            widget: string
+            required: false
+          - label: LinkedIn URL
+            name: linkedin
+            widget: string
+            required: false
+          - label: Bio
+            name: body
+            widget: markdown
+            hint: "Your homepage bio — supports markdown"
+
+  # ── Pages — about, now, projects, anything else ─────────────────────────────
+  - name: pages
+    label: "Pages (about, now, etc.)"
+    folder: src/content/site-pages
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: mdx
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: "Shown in the nav and as the page heading (e.g. 'about', 'now')"
+      - label: URL Slug
+        name: slug
+        widget: string
+        hint: "URL path — must start with / (e.g. /about, /now, /projects)"
+      - label: Content
+        name: body
+        widget: markdown
+      - label: Meta Description
+        name: description
+        widget: string
+        required: false
+        hint: "Controls the text snippet shown under your page title in Google search results, and the preview text when shared on Twitter/X, LinkedIn, WhatsApp or iMessage. Keep it under 155 characters. Leave blank to auto-generate from page content."
+      - label: Show in Nav
+        name: showInNav
+        widget: boolean
+        default: true
+      - label: Nav Order
+        name: navOrder
+        widget: number
+        default: 99
+        hint: "Lower = earlier in nav. home=1, blog=2, about=3"
+
+  # ── Blog posts ───────────────────────────────────────────────────────────────
+  - name: blog
+    label: "Blog Posts (/blog)"
+    folder: src/content/blog
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: mdx
+    format: frontmatter
+    sortable_fields:
+      - pubDate
+      - title
+    default_sort_field: pubDate
+    default_sort_direction: descending
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        hint: "Shown under the post title in Google search results, on the blog list page, and when the post is shared on social media. Write 1-2 clean sentences, no markdown, under 155 characters."
+      - label: Publish Date
+        name: pubDate
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+      - label: Tags
+        name: tags
+        widget: relation
+        collection: tags
+        search_fields: [title]
+        display_fields: [title]
+        value_field: title
+        required: false
+        multiple: true
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        hint: "Toggle off to publish"
+      - label: Cover Image
+        name: image
+        widget: image
+        required: false
+        hint: "Used for social sharing preview (OG image)"
+      - label: Body
+        name: body
+        widget: markdown

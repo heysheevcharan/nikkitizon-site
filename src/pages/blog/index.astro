@@ -1,0 +1,133 @@
+---
+import Base from '../../layouts/Base.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../../site.config';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+// Group by year
+const grouped = posts.reduce<Record<string, typeof posts>>((acc, post) => {
+  const year = post.data.pubDate.getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+
+function truncate(text: string, maxChars = 120): string {
+  if (!text || text.length <= maxChars) return text;
+  return text.slice(0, maxChars).replace(/\s\S*$/, '') + '…';
+}
+---
+
+<Base
+  title="Blog"
+  description={`All posts by ${SITE.name}.`}
+>
+  <h1>blog</h1>
+  <p class="text-muted" style="margin-bottom: 2.5rem;">
+    {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+  </p>
+
+  {years.map((year) => (
+    <section class="year-section">
+      <h2 class="year-heading">{year}</h2>
+      <ul class="blog-index-list">
+        {grouped[year].map((post) => (
+          <li class="blog-index-item">
+            <div class="blog-index-row">
+              <span class="log-date blog-index-date">
+                {formatDate(post.data.pubDate)}
+              </span>
+              <a href={`/blog/${post.id}`} class="blog-index-title">{post.data.title}</a>
+            </div>
+            {post.data.description && (
+              <p class="text-muted blog-index-desc">
+                {truncate(post.data.description)}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  {posts.length === 0 && (
+    <p class="text-muted">No posts yet. Check back soon.</p>
+  )}
+
+  {SITE.substackEmbed && <hr class="divider" />}
+  <Newsletter />
+</Base>
+
+<style>
+  .year-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .year-heading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .blog-index-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .blog-index-item {
+    margin-bottom: 1.25rem;
+  }
+
+  .blog-index-row {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .blog-index-date {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    min-width: 6.5rem;
+  }
+
+  .blog-index-title {
+    text-decoration-color: var(--accent);
+  }
+
+  .blog-index-desc {
+    margin: 0.2rem 0 0 7.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 500px) {
+    .blog-index-row {
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .blog-index-date {
+      min-width: auto;
+    }
+    .blog-index-desc {
+      margin-left: 0;
+      margin-top: 0.35rem;
+    }
+  }
+</style>
