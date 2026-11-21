@@ -11,9 +11,11 @@ interface Props {
   pubDate?: Date;
   /** fill the main column edge to edge (no padded page), e.g. the Canva portfolio */
   bleed?: boolean;
+  /** plain cream background instead of grid paper */
+  plain?: boolean;
 }
 
-const { title, description, image, type, pubDate, bleed = false } = Astro.props;
+const { title, description, image, type, pubDate, bleed = false, plain = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -38,7 +40,7 @@ const { title, description, image, type, pubDate, bleed = false } = Astro.props;
   </head>
   <body>
     <Sidebar />
-    <div class="shell-main grid-paper">
+    <div class:list={['shell-main', { 'grid-paper': !plain }]}>
       {bleed ? (
         <main><slot /></main>
       ) : (

@@ -1,359 +1,2230 @@
 {
-  "sections": [
+ "slides": [
+  {
+   "items": [
     {
-      "id": "stays",
-      "title": "Stays & Experiences",
-      "kicker": "hotels \u00b7 airbnbs \u00b7 getaways",
-      "groups": [
-        {
-          "title": "Hotel room vibes",
-          "text": "Slow mornings, crisp sheets and the small details that make someone book the extra night.",
-          "layout": "collage",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
-              "alt": "Nikki in a robe with coffee and a city skyline",
-              "caption": "hotel vibes"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-room-tour.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-in-bed.jpg",
-              "alt": "Reading in bed with a coffee"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-by-lamp.jpg",
-              "alt": "Reading by the bedside lamp in a robe"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-soto-grande.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-three-robes.jpg",
-              "alt": "Three friends in robes and sunglasses",
-              "caption": "with the girls"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-bed-and-book.jpg",
-              "alt": "Open book on a hotel bed"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-thank-you-card.jpg",
-              "alt": "Hotel thank-you card on the sheets"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-stay-one-more-day.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-coffee-in-bed.jpg",
-              "alt": "Coffee and a book in bed"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-on-bed.jpg",
-              "alt": "Sitting on a hotel bed in a robe"
-            }
-          ]
-        },
-        {
-          "title": "Ambiance, exterior & interior stills",
-          "text": "The building, the lobby, the corners people screenshot.",
-          "layout": "wall",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-meraki-exterior.jpg",
-              "alt": "Meraki hotel exterior with red lanterns"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-terracotta-building.jpg",
-              "alt": "Terracotta building with plants"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-art-wall-interior.jpg",
-              "alt": "Interior with framed art and teak chairs"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-villa-porch.jpg",
-              "alt": "Villa porch"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-courtyard.jpg",
-              "alt": "Courtyard with a pond and plants"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-leaf-bar.jpg",
-              "alt": "Leaf Bar sign"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-lanterns.jpg",
-              "alt": "Colourful hanging lanterns"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-window.jpg",
-              "alt": "Robe at the window at sunrise"
-            }
-          ]
-        },
-        {
-          "title": "Airbnb vibes",
-          "text": "POV reels that make a stay feel like a scene from a show.",
-          "layout": "reels",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kdrama-airbnb-pov.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-airbnb-interior.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sheer-curtains.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-window.mp4",
-              "alt": ""
-            }
-          ]
-        },
-        {
-          "title": "Pool days & weekend getaways",
-          "text": "Mood, pool vibes and visual storytelling for slow weekends.",
-          "layout": "collage",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pool-water.jpg",
-              "alt": "Turquoise pool water",
-              "caption": "pool vibes"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-wine-at-dusk.jpg",
-              "alt": "Two wine glasses at dusk",
-              "caption": "mood"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-bonfire.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pink-mugs.jpg",
-              "alt": "Two pink mugs by the pool"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-day.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pillows-and-wine.jpg",
-              "alt": "Hugging hotel pillows with a bottle of wine"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-sunsets.mp4",
-              "alt": ""
-            }
-          ]
-        },
-        {
-          "title": "Hotel lifestyle content",
-          "text": "Day-in-the-life reels from check-in to the last sunset.",
-          "layout": "reels",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-6am-to-10am.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sunset-room-service.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-slow-morning.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-no-audio.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-qbinn-tusker.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-mood.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-hours.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay-weekend.mp4",
-              "alt": ""
-            }
-          ]
-        },
-        {
-          "title": "Travel & visual storytelling",
-          "text": "Carousels and travel diaries that take people along.",
-          "layout": "reels",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-fly-with-me-to-blr.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hoi-an.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-window-shopping.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-where-we-went.mp4",
-              "alt": ""
-            }
-          ]
-        }
-      ]
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
+     "box": {
+      "x": 53.84,
+      "y": 5.88,
+      "w": 16.93,
+      "h": 31.74
+     },
+     "crop": {
+      "x": -16.28,
+      "y": -58.69,
+      "w": 148.63,
+      "h": 198.21
+     },
+     "alt": "Nikki in a robe with coffee and a city skyline"
     },
     {
-      "id": "food",
-      "title": "Food, Cafes & Restaurants",
-      "kicker": "cafes \u00b7 restaurants \u00b7 launches",
-      "groups": [
-        {
-          "title": "Tara Inom Cafe",
-          "label": "Client \u00b7 full social media management",
-          "text": "Reels, posts and planning, end to end.",
-          "chips": [
-            "split-screen overview",
-            "delivery app launch",
-            "new shop launch",
-            "food truck launch"
-          ],
-          "layout": "feature",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cup.jpg",
-              "alt": "Tara Inom cup held against a wood wall"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-work-lunch.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cheers.jpg",
-              "alt": "Two Tara Inom drinks raised against the sky",
-              "caption": "new drinks"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-launch.mp4",
-              "alt": ""
-            }
-          ]
-        },
-        {
-          "title": "Collabs in Bengaluru",
-          "text": "Launch and review reels for food spots around BLR.",
-          "layout": "cards",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-inminutes-blr.mp4",
-              "alt": "",
-              "caption": "InMinutes"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-goan-poiee-blr.mp4",
-              "alt": "",
-              "caption": "Goan Poiee"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kiss-burgers-blr.mp4",
-              "alt": "",
-              "caption": "KISS Burgers"
-            }
-          ]
-        },
-        {
-          "title": "Food stills from hotels & cafes",
-          "text": "Breakfast spreads, bakery trays and the first sip.",
-          "layout": "wall",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-hotel-buffet.jpg",
-              "alt": "Hotel breakfast buffet"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-croissants.jpg",
-              "alt": "Tray of croissants"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-latte-art.jpg",
-              "alt": "Latte art from above"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-sandwich.jpg",
-              "alt": "Holding a breakfast sandwich"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pastries.jpg",
-              "alt": "Tray of pastries"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-rice-bowls.jpg",
-              "alt": "Rice bowls and iced coffee from above"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-eggs-benedict.jpg",
-              "alt": "Eggs benedict from above"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-fresh-bread.jpg",
-              "alt": "Fresh bread at a bakery"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-phone-latte.jpg",
-              "alt": "Shooting a latte on a phone"
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-happy-hour-sign.jpg",
-              "alt": "Sunset happy hours sign"
-            }
-          ]
-        },
-        {
-          "title": "Cafe vibes & food reels",
-          "text": "New drinks, cafe launches and the lunch everyone wants to try.",
-          "layout": "reels",
-          "items": [
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-latte-and-matcha.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-cafe-spread.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-lunch-ugc.mp4",
-              "alt": ""
-            },
-            {
-              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-shared-meal.mp4",
-              "alt": ""
-            }
-          ]
-        }
-      ]
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pink-mugs.jpg",
+     "box": {
+      "x": 53.84,
+      "y": 41.36,
+      "w": 16.93,
+      "h": 31.74
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.68,
+      "w": 100,
+      "h": 133.36
+     },
+     "alt": "Two pink mugs by the pool"
+    },
+    {
+     "type": "text",
+     "role": "display",
+     "text": "Nikki Tizon",
+     "box": {
+      "x": 5.24,
+      "y": 3.26,
+      "w": 70.96,
+      "h": 14.97
+     },
+     "size": 6.635,
+     "align": "left",
+     "lh": 1.19
+    },
+    {
+     "type": "text",
+     "role": "display",
+     "text": "UGC Creator",
+     "box": {
+      "x": 45.55,
+      "y": 73.1,
+      "w": 49.22,
+      "h": 12.53
+     },
+     "size": 5.616,
+     "align": "right",
+     "italic": true,
+     "lh": 1.19
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-window.mp4",
+     "box": {
+      "x": 5.5,
+      "y": 25.75,
+      "w": 22.77,
+      "h": 61.24
+     },
+     "crop": {
+      "x": 0,
+      "y": -11.96,
+      "w": 100,
+      "h": 123.92
+     }
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-in-bed.jpg",
+     "box": {
+      "x": 29.82,
+      "y": 21.75,
+      "w": 22.77,
+      "h": 61.24
+     },
+     "crop": {
+      "x": -7.6,
+      "y": 0,
+      "w": 107.6,
+      "h": 100
+     },
+     "alt": "Reading in bed with a coffee"
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay.mp4",
+     "box": {
+      "x": 72.02,
+      "y": 10.74,
+      "w": 22.77,
+      "h": 61.24
+     },
+     "crop": {
+      "x": 0,
+      "y": -11.96,
+      "w": 100,
+      "h": 123.92
+     }
+    },
+    {
+     "type": "text",
+     "role": "display",
+     "text": "Social Media Manager",
+     "box": {
+      "x": 25.39,
+      "y": 84.22,
+      "w": 69.37,
+      "h": 12.53
+     },
+     "size": 5.616,
+     "align": "right",
+     "italic": true,
+     "lh": 1.19
     }
-  ]
+   ],
+   "id": "intro"
+  },
+  {
+   "items": [
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-lunch-ugc.mp4",
+     "box": {
+      "x": 8.75,
+      "y": 12.73,
+      "w": 22.79,
+      "h": 72
+     },
+     "crop": {
+      "x": 0,
+      "y": -2.75,
+      "w": 100,
+      "h": 105.49
+     }
+    },
+    {
+     "type": "pin",
+     "box": {
+      "x": 45.68,
+      "y": 84.14,
+      "w": 1.42,
+      "h": 4.67
+     }
+    },
+    {
+     "type": "text",
+     "role": "display",
+     "text": "HELLO, I'M NIKKI",
+     "box": {
+      "x": 35.19,
+      "y": 12.73,
+      "w": 57.75,
+      "h": 12.21
+     },
+     "size": 4.651,
+     "align": "left",
+     "lh": 1.4
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "I love creating and sharing content on different social\nplatforms. I specialize in videos and photos that capture\nthe feel, vibe, and story of your brand. For me, content\nisn\u2019t just about looking good or following trends, it\u2019s about\ngiving people the itch to actually show up.\n\nWith 6 years in short-term rental operations and hands-on\nexperience running social media for a cafe, I bring an\ninsider\u2019s understanding of hospitality to every piece of\ncontent I create.",
+     "box": {
+      "x": 34.65,
+      "y": 38.81,
+      "w": 55.51,
+      "h": 40.4
+     },
+     "size": 1.43,
+     "align": "left",
+     "lh": 1.37
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "@nikkindaeyo\nnikkindaeyo@gmail.com",
+     "box": {
+      "x": 8.75,
+      "y": 86.6,
+      "w": 27.6,
+      "h": 7.24
+     },
+     "size": 1.409,
+     "align": "left",
+     "lh": 1.37
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "HOTELS \u00b7 AIRBNBS \u00b7 EXPERIENCES \u00b7\nCAFES \u00b7 RESTAURANTS & MORE",
+     "box": {
+      "x": 42.39,
+      "y": 26.9,
+      "w": 37.04,
+      "h": 8.33
+     },
+     "size": 1.61,
+     "align": "center",
+     "lh": 1.38
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "PHILIPPINES \u00b7 INDIA",
+     "box": {
+      "x": 47.44,
+      "y": 85.22,
+      "w": 20.99,
+      "h": 3.84
+     },
+     "size": 1.484,
+     "align": "center",
+     "lh": 1.38
+    }
+   ],
+   "id": "hello"
+  },
+  {
+   "items": [
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-hours.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-slow-morning.mp4",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-day.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-no-audio.mp4",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "AIRBNB VIBES",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 4,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "AMENITIES",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "LOCATION",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "HOTEL VIBES",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-on-bed.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": -1.41,
+      "y": -9.62,
+      "w": 105.89,
+      "h": 112.95
+     },
+     "alt": "Sitting on a hotel bed in a robe"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-thank-you-card.jpg",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": 0,
+      "y": -3.33,
+      "w": 100,
+      "h": 106.67
+     },
+     "alt": "Hotel thank-you card on the sheets"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-coffee-in-bed.jpg",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": 0,
+      "y": -3.33,
+      "w": 100,
+      "h": 106.67
+     },
+     "alt": "Coffee and a book in bed"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Hotel room vibes",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-lanterns.jpg",
+     "box": {
+      "x": 48.95,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     },
+     "crop": {
+      "x": -16.71,
+      "y": 0,
+      "w": 133.42,
+      "h": 100
+     },
+     "alt": "Colourful hanging lanterns"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-happy-hour-sign.jpg",
+     "box": {
+      "x": 72.12,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     },
+     "crop": {
+      "x": -16.71,
+      "y": 0,
+      "w": 133.42,
+      "h": 100
+     },
+     "alt": "Sunset happy hours sign"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pool-water.jpg",
+     "box": {
+      "x": 25.77,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     },
+     "crop": {
+      "x": -23.71,
+      "y": -28.61,
+      "w": 171.81,
+      "h": 128.62
+     },
+     "alt": "Turquoise pool water"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-wine-at-dusk.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 13.15,
+      "w": 19.99,
+      "h": 37.45
+     },
+     "crop": {
+      "x": -8.24,
+      "y": -49.54,
+      "w": 109.73,
+      "h": 179.25
+     },
+     "alt": "Two wine glasses at dusk"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pillows-and-wine.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 51.74,
+      "w": 19.99,
+      "h": 37.45
+     },
+     "crop": {
+      "x": -8.35,
+      "y": -39.97,
+      "w": 111.02,
+      "h": 148.18
+     },
+     "alt": "Hugging hotel pillows with a bottle of wine"
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Ambiance, exterior, and interior stills",
+     "box": {
+      "x": 5.24,
+      "y": 90.91,
+      "w": 17.21,
+      "h": 2.23
+     },
+     "size": 0.856,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide5-1.png",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Hotel room amenities carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide5-2.png",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Hotel room amenities carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide5-3.png",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": 0,
+      "y": -3.33,
+      "w": 100,
+      "h": 106.67
+     },
+     "alt": "Hotel room amenities carousel slide"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Hotel room amenities",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-6am-to-10am.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-shared-meal.mp4",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sunset-room-service.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-bonfire.mp4",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "AIRBNB VIBES",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 4,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "LOCATION",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "VACATION LIFESTYLE",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "EXPERIENCE",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-sunsets.mp4",
+     "box": {
+      "x": 48.95,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-soto-grande.mp4",
+     "box": {
+      "x": 72.12,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-room-tour.mp4",
+     "box": {
+      "x": 25.77,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-three-robes.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 13.15,
+      "w": 19.99,
+      "h": 37.45
+     },
+     "crop": {
+      "x": -1.52,
+      "y": -42.16,
+      "w": 108.43,
+      "h": 144.72
+     },
+     "alt": "Three friends in robes and sunglasses"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-by-lamp.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 51.74,
+      "w": 19.99,
+      "h": 37.45
+     },
+     "crop": {
+      "x": 0,
+      "y": -26.35,
+      "w": 100,
+      "h": 133.47
+     },
+     "alt": "Reading by the bedside lamp in a robe"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Hotel lifestyle content",
+     "box": {
+      "x": 5.24,
+      "y": 90.91,
+      "w": 43.5,
+      "h": 2.23
+     },
+     "size": 0.856,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide8-1.png",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide8-2.png",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide8-3.png",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Amenities highlight carousel",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sheer-curtains.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kdrama-airbnb-pov.mp4",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-mood.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay-weekend.mp4",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "WEEKEND GETAWAY",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 4,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "MOOD",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "POOL VIBES",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "ROOM TOUR",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-fly-with-me-to-blr.mp4",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hoi-an.mp4",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-window-shopping.mp4",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     }
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Visual storytelling / Carousels",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-meraki-exterior.jpg",
+     "box": {
+      "x": 6.74,
+      "y": 14.12,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Meraki hotel exterior with red lanterns"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-leaf-bar.jpg",
+     "box": {
+      "x": 26.73,
+      "y": 14.12,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Leaf Bar sign"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-courtyard.jpg",
+     "box": {
+      "x": 51.02,
+      "y": 14.12,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": 0,
+      "y": -30.08,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Courtyard with a pond and plants"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-terracotta-building.jpg",
+     "box": {
+      "x": 6.74,
+      "y": 51.7,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Terracotta building with plants"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-art-wall-interior.jpg",
+     "box": {
+      "x": 26.73,
+      "y": 51.7,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": -5.72,
+      "y": -30.43,
+      "w": 105.72,
+      "h": 141.28
+     },
+     "alt": "Interior with framed art and teak chairs"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-villa-porch.jpg",
+     "box": {
+      "x": 51.02,
+      "y": 51.7,
+      "w": 19.47,
+      "h": 36.47
+     },
+     "crop": {
+      "x": 0,
+      "y": -18.48,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Villa porch"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-bed-and-book.jpg",
+     "box": {
+      "x": 71.09,
+      "y": 14.12,
+      "w": 22.17,
+      "h": 74.04
+     },
+     "crop": {
+      "x": -16.79,
+      "y": 0,
+      "w": 133.59,
+      "h": 100
+     },
+     "alt": "Open book on a hotel bed"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 6.74,
+      "y": 7.6,
+      "w": 43.39,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Ambiance, exterior, and interior stills",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide12-1.png",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide12-2.png",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-slide12-3.png",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "alt": "Amenities highlight carousel slide"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Amenities highlight carousel",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-airbnb-interior.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-stay-one-more-day.mp4",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-qbinn-tusker.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-airbnb-pov-night.mp4",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "WEEKEND GETAWAY",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 4,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "LOCATION\nHIGHLIGHTS",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 6.77
+     },
+     "size": 1.299,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "HOTEL AMENITIES",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "HOTEL ROOM",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-window.jpg",
+     "box": {
+      "x": 5.24,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": -6.16,
+      "y": -56.02,
+      "w": 117.64,
+      "h": 168.06
+     },
+     "alt": "Robe at the window at sunrise"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
+     "box": {
+      "x": 35.22,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": 0,
+      "y": -6.67,
+      "w": 100,
+      "h": 106.67
+     },
+     "alt": "Nikki in a robe with coffee and a city skyline"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-balcony.jpg",
+     "box": {
+      "x": 65.19,
+      "y": 15.37,
+      "w": 29.55,
+      "h": 69.27
+     },
+     "crop": {
+      "x": 0,
+      "y": -37.03,
+      "w": 104.32,
+      "h": 149.02
+     },
+     "alt": "Robe at the balcony window"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "STAYS AND EXPERIENCES PORTFOLIO",
+     "box": {
+      "x": 5.24,
+      "y": 6.54,
+      "w": 44.56,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Hotel room vibes",
+     "box": {
+      "x": 6.74,
+      "y": 89.83,
+      "w": 42.35,
+      "h": 2.17
+     },
+     "size": 0.833,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "stays"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-croissants.jpg",
+     "box": {
+      "x": 5.85,
+      "y": 13.66,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Tray of croissants"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-hotel-buffet.jpg",
+     "box": {
+      "x": 26.24,
+      "y": 13.66,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Hotel breakfast buffet"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-latte-art.jpg",
+     "box": {
+      "x": 51.01,
+      "y": 13.66,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -25.21,
+      "w": 100,
+      "h": 150.42
+     },
+     "alt": "Latte art from above"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-fresh-bread.jpg",
+     "box": {
+      "x": 5.85,
+      "y": 51.99,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.27,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Fresh bread at a bakery"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pastries.jpg",
+     "box": {
+      "x": 26.24,
+      "y": 51.99,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.73,
+      "w": 100,
+      "h": 133.47
+     },
+     "alt": "Tray of pastries"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-rice-bowls.jpg",
+     "box": {
+      "x": 51.01,
+      "y": 51.99,
+      "w": 19.86,
+      "h": 37.19
+     },
+     "crop": {
+      "x": 0,
+      "y": -25.21,
+      "w": 100,
+      "h": 150.42
+     },
+     "alt": "Rice bowls and iced coffee from above"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-phone-latte.jpg",
+     "box": {
+      "x": 71.49,
+      "y": 13.66,
+      "w": 22.61,
+      "h": 75.52
+     },
+     "crop": {
+      "x": -9.26,
+      "y": 0,
+      "w": 118.53,
+      "h": 100
+     },
+     "alt": "Shooting a latte on a phone"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "FOOD, CAFE, AND RESTAURANT PORTFOLIO",
+     "box": {
+      "x": 6.75,
+      "y": 6.88,
+      "w": 44.26,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Food stills from hotels and cafes",
+     "box": {
+      "x": 5.85,
+      "y": 90.89,
+      "w": 43.2,
+      "h": 2.21
+     },
+     "size": 0.848,
+     "align": "left",
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Client: Tara Inom Cafe\nFull social media management, including reels, posts, and planning",
+     "box": {
+      "x": 50.96,
+      "y": 90.89,
+      "w": 43.2,
+      "h": 4.8
+     },
+     "size": 0.921,
+     "align": "left",
+     "lh": 1.39
+    }
+   ],
+   "id": "food"
+  },
+  {
+   "items": [
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-goan-poiee-blr.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kiss-burgers-blr.mp4",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-inminutes-blr.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-where-we-went.mp4",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "SPLIT SCREEN\nOVERVIEW",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 6.77
+     },
+     "size": 1.299,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "DELIVERY APP LAUNCH",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "NEW SHOP LAUNCH",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 0,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "FOOD TRUCK LAUNCH",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "FOOD, CAFE, AND RESTAURANT PORTFOLIO",
+     "box": {
+      "x": 6.75,
+      "y": 6.88,
+      "w": 44.26,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Collab: InMinutes, BLR",
+     "box": {
+      "x": 16.28,
+      "y": 93.38,
+      "w": 44.15,
+      "h": 4.9
+     },
+     "size": 1.296,
+     "align": "center",
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Collab: Goan Poiee, BLR",
+     "box": {
+      "x": 39.46,
+      "y": 93.38,
+      "w": 44.15,
+      "h": 2.26
+     },
+     "size": 0.867,
+     "align": "center",
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Collab: KISS Burgers, BLR",
+     "box": {
+      "x": 63.64,
+      "y": 93.38,
+      "w": 44.15,
+      "h": 2.26
+     },
+     "size": 0.867,
+     "align": "center",
+     "lh": 1.39
+    }
+   ],
+   "id": "food"
+  },
+  {
+   "items": [
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-cafe-location.jpg",
+     "box": {
+      "x": 48.97,
+      "y": 13.96,
+      "w": 22.14,
+      "h": 73.94
+     },
+     "alt": "Iced coffee and a laptop at a Bengaluru cafe",
+     "crop": {
+      "x": -11.28,
+      "y": 0,
+      "w": 142.49,
+      "h": 100
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-cafe-spread.mp4",
+     "box": {
+      "x": 71.63,
+      "y": 13.96,
+      "w": 22.14,
+      "h": 73.94
+     }
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-latte-and-matcha.mp4",
+     "box": {
+      "x": 26.31,
+      "y": 13.96,
+      "w": 22.14,
+      "h": 73.94
+     }
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Food and location stills and videos",
+     "box": {
+      "x": 6.23,
+      "y": 90.0,
+      "w": 42.22,
+      "h": 2.18
+     },
+     "size": 0.836,
+     "align": "left",
+     "lh": 1.39
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-sandwich.jpg",
+     "box": {
+      "x": 6.23,
+      "y": 13.96,
+      "w": 19.55,
+      "h": 36.62
+     },
+     "crop": {
+      "x": 0,
+      "y": -16.81,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Holding a breakfast sandwich"
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-eggs-benedict.jpg",
+     "box": {
+      "x": 6.23,
+      "y": 51.7,
+      "w": 19.55,
+      "h": 36.62
+     },
+     "crop": {
+      "x": 0,
+      "y": -24.37,
+      "w": 100,
+      "h": 133.63
+     },
+     "alt": "Eggs benedict from above"
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "FOOD, CAFE, AND RESTAURANT PORTFOLIO",
+     "box": {
+      "x": 6.23,
+      "y": 7.43,
+      "w": 43.58,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    }
+   ],
+   "id": "food"
+  },
+  {
+   "items": [
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-launch.mp4",
+     "box": {
+      "x": 50.21,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cup.jpg",
+     "box": {
+      "x": 73.39,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     },
+     "crop": {
+      "x": -21.78,
+      "y": -5.81,
+      "w": 141.72,
+      "h": 106.09
+     },
+     "alt": "Tara Inom cup held against a wood wall"
+    },
+    {
+     "type": "video",
+     "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-work-lunch.mp4",
+     "box": {
+      "x": 27.04,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     }
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cheers.jpg",
+     "box": {
+      "x": 3.83,
+      "y": 13.15,
+      "w": 22.64,
+      "h": 75.61
+     },
+     "crop": {
+      "x": -16.79,
+      "y": 0,
+      "w": 133.59,
+      "h": 100
+     },
+     "alt": "Two Tara Inom drinks raised against the sky"
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "NEW DRINKS",
+     "box": {
+      "x": 5.24,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 3,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "CAFE VIBES",
+     "box": {
+      "x": 28.51,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 2,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "NEW CAFE LAUNCH",
+     "box": {
+      "x": 51.69,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 0,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "label",
+     "text": "CAFE LIFESTYLE",
+     "box": {
+      "x": 74.85,
+      "y": 90,
+      "w": 19.69,
+      "h": 3.12
+     },
+     "size": 1.197,
+     "align": "center",
+     "captionFor": 1,
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "kicker",
+     "text": "FOOD, CAFE, AND RESTAURANT PORTFOLIO",
+     "box": {
+      "x": 6.75,
+      "y": 6.88,
+      "w": 44.26,
+      "h": 3.12
+     },
+     "size": 1.417,
+     "align": "left",
+     "lh": 1.18
+    }
+   ],
+   "id": "food"
+  },
+  {
+   "items": [
+    {
+     "type": "phone",
+     "box": {
+      "x": 14.0,
+      "y": 14.3,
+      "w": 25.4,
+      "h": 94.1
+     }
+    },
+    {
+     "type": "text",
+     "role": "heading",
+     "text": "UGC CREATION",
+     "box": {
+      "x": 46.71,
+      "y": 21.05,
+      "w": 18.79,
+      "h": 3.13
+     },
+     "size": 1.21,
+     "align": "left",
+     "lh": 1.38
+    },
+    {
+     "type": "image",
+     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-offer-cutout.png",
+     "box": {
+      "x": 14.02,
+      "y": 14.26,
+      "w": 25.36,
+      "h": 94.09
+     },
+     "alt": "Nikki holding a laptop",
+     "cutout": true
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Scroll-stopping videos & photos that show off your\nbrand's story. I create, you own and use.",
+     "box": {
+      "x": 46.71,
+      "y": 26.15,
+      "w": 40.6,
+      "h": 6.2
+     },
+     "size": 1.207,
+     "align": "left",
+     "lh": 1.37
+    },
+    {
+     "type": "text",
+     "role": "heading",
+     "text": "FULL SOCIAL MEDIA MANAGEMENT",
+     "box": {
+      "x": 46.71,
+      "y": 35.65,
+      "w": 31.81,
+      "h": 3.13
+     },
+     "size": 1.21,
+     "align": "left",
+     "lh": 1.38
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "End-to-end content, strategy, posting, and\nmanagement that actually fits how your brand runs.\nYou are hands off, and I take care of the rest.",
+     "box": {
+      "x": 46.71,
+      "y": 40.04,
+      "w": 40.6,
+      "h": 9.54
+     },
+     "size": 1.238,
+     "align": "left",
+     "lh": 1.37
+    },
+    {
+     "type": "text",
+     "role": "heading",
+     "text": "SOCIAL MEDIA PACKAGES",
+     "box": {
+      "x": 46.71,
+      "y": 52.88,
+      "w": 31.81,
+      "h": 3.13
+     },
+     "size": 1.21,
+     "align": "left",
+     "lh": 1.38
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "Flexible tiers to match your goals and budget.",
+     "box": {
+      "x": 46.71,
+      "y": 57.29,
+      "w": 40.6,
+      "h": 2.86
+     },
+     "size": 1.113,
+     "align": "left",
+     "lh": 1.37
+    },
+    {
+     "type": "text",
+     "role": "heading",
+     "text": "WHAT I OFFER",
+     "box": {
+      "x": 16.15,
+      "y": 8.35,
+      "w": 35.45,
+      "h": 3.26
+     },
+     "size": 1.473,
+     "align": "left",
+     "lh": 1.18
+    },
+    {
+     "type": "text",
+     "role": "body",
+     "text": "@createdby_nikkii\nnikkindaeyo@gmail.com",
+     "box": {
+      "x": 51.04,
+      "y": 74.77,
+      "w": 25.4,
+      "h": 6.77
+     },
+     "size": 1.299,
+     "align": "center",
+     "lh": 1.39
+    },
+    {
+     "type": "text",
+     "role": "heading",
+     "text": "LET\u2019S WORK TOGETHER!",
+     "box": {
+      "x": 43.74,
+      "y": 67.83,
+      "w": 40.0,
+      "h": 3.68
+     },
+     "size": 1.663,
+     "align": "center",
+     "lh": 1.18
+    }
+   ],
+   "id": "offer"
+  }
+ ]
 }

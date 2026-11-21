@@ -349,7 +349,7 @@ collections:
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
 
-  # ── Portfolio page (/portfolio) ─────────────────────────────────────────────
+  # ── Portfolio page (/portfolio): same slides and layout as the Canva site ──────
   - name: portfolio
     label: "Portfolio"
     files:
@@ -357,46 +357,51 @@ collections:
         label: Portfolio page
         file: src/data/portfolio.json
         format: json
-        description: "Sections of /portfolio. Each section has groups (e.g. 'Hotel room vibes'); each group has photos/videos uploaded to Cloudinary."
+        description: "The 20 slides of /portfolio, laid out like the Canva site. Swap a photo/video or edit text here; positions are percentages of the slide (x/y from the top-left, w/h = size) and usually don't need changing."
         fields:
-          - label: Sections
-            name: sections
+          - label: Slides
+            name: slides
             widget: list
             collapsed: true
-            summary: "{{fields.title}}"
+            summary: "{{fields.id}}"
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Anchor id, name: id, widget: string, hint: "Short id used in links, e.g. stays or food" }
-              - { label: Small label, name: kicker, widget: string, required: false }
-              - label: Groups
-                name: groups
+              - { label: Section, name: id, widget: string, hint: "stays, food, offer… (used for the jump links)" }
+              - label: Items
+                name: items
                 widget: list
                 collapsed: true
-                summary: "{{fields.title}}"
+                summary: "{{fields.type}} {{fields.text}}"
                 fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Label, name: label, widget: string, required: false, hint: "Optional, e.g. 'Client · full social media management'" }
+                  - { label: Type, name: type, widget: select, options: [image, video, text, pin, phone] }
+                  - { label: "Photo or video", name: src, widget: file, required: false }
+                  - { label: Description, name: alt, widget: string, required: false }
                   - { label: Text, name: text, widget: text, required: false }
-                  - { label: Chips, name: chips, widget: list, required: false }
-                  - label: Layout
-                    name: layout
-                    widget: select
-                    default: collage
-                    options:
-                      - { label: "Scrapbook collage (tilted polaroids)", value: collage }
-                      - { label: "Photo wall (grid of taped prints)", value: wall }
-                      - { label: "Reels row (scrolls sideways)", value: reels }
-                      - { label: "Cards (one video per card, caption = name)", value: cards }
-                      - { label: "Feature card (text left, collage right)", value: feature }
-                  - label: Photos & videos
-                    name: items
-                    widget: list
-                    summary: "{{fields.caption}} {{fields.alt}}"
+                  - { label: "Text style", name: role, widget: select, required: false, options: [display, heading, kicker, label, body] }
+                  - { label: "Text size (% of slide width)", name: size, widget: number, value_type: float, required: false }
+                  - { label: "Line height", name: lh, widget: number, value_type: float, required: false }
+                  - { label: Alignment, name: align, widget: select, required: false, options: [left, center, right] }
+                  - { label: Italic, name: italic, widget: boolean, required: false }
+                  - { label: "Caption of item #", name: captionFor, widget: number, required: false, hint: "Set on a label that sits under a photo/video (0-based item number)" }
+                  - { label: "Cut-out image", name: cutout, widget: boolean, required: false }
+                  - label: Position
+                    name: box
+                    widget: object
+                    collapsed: true
                     fields:
-                      - { label: Photo or video, name: src, widget: file }
-                      - { label: "Cover image (videos, optional)", name: poster, widget: image, required: false }
-                      - { label: Description, name: alt, widget: string, required: false }
-                      - { label: Caption, name: caption, widget: string, required: false, hint: "Handwritten label under a polaroid" }
+                      - { label: x, name: x, widget: number, value_type: float }
+                      - { label: y, name: y, widget: number, value_type: float }
+                      - { label: w, name: w, widget: number, value_type: float }
+                      - { label: h, name: h, widget: number, value_type: float }
+                  - label: "Crop (inside the frame)"
+                    name: crop
+                    widget: object
+                    collapsed: true
+                    required: false
+                    fields:
+                      - { label: x, name: x, widget: number, value_type: float }
+                      - { label: y, name: y, widget: number, value_type: float }
+                      - { label: w, name: w, widget: number, value_type: float }
+                      - { label: h, name: h, widget: number, value_type: float }
 
   # ── Home page — personal details + bio ──────────────────────────────────────
   - name: home

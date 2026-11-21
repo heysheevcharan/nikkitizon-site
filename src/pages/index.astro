@@ -42,7 +42,7 @@ const work = [
       { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 210, rotate: 3, caption: 'airbnb pov' },
       { id: 'work-stays-3', kind: 'photo', treatment: 'clip', width: 190, rotate: -4, caption: 'pool vibes' },
     ],
-    sticker: '🛎️',
+    sticker: '📷',
   },
   {
     title: 'Food & Restaurants',
@@ -280,7 +280,17 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
     max-width: 16ch;
   }
   .typed-wrap { display: block; white-space: nowrap; min-height: 1em; }
-  .typed { font-style: italic; }
+  /* the typing word: highlighter-pen swipe so it stands out from the red */
+  .typed {
+    font-style: italic;
+    color: var(--red-ink);
+    background: linear-gradient(transparent 12%, #FFD84D 12%, #FFD84D 88%, transparent 88%);
+    padding: 0 0.12em;
+    margin: 0 -0.04em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .typed:empty { padding: 0; }
   .caret {
     display: inline-block;
     width: 2px;
