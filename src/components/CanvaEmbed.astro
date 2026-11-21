@@ -31,6 +31,13 @@ function toEmbedUrl(raw: string): string | null {
 const embedUrl = toEmbedUrl(value);
 const ratio = Number(value.match(/padding-top:\s*([\d.]+)%/)?.[1]) || 0; // height as % of width
 const sized = ratio > 0 && ratio < 5000;
+// full-bleed: size the frame from just below the nav to the bottom of the window
+const fitScript = `(() => {
+  const el = document.currentScript.previousElementSibling;
+  const fit = () => el && document.documentElement.style.setProperty('--canva-top', el.getBoundingClientRect().top + window.scrollY + 'px');
+  fit();
+  addEventListener('resize', fit);
+})();`;
 ---
 
 {
@@ -38,6 +45,12 @@ const sized = ratio > 0 && ratio < 5000;
     <div class:list={['canva-embed', { 'is-sized': sized, 'is-bleed': fullBleed }]} style={sized ? `--canva-ratio: ${ratio}%` : undefined}>
       <iframe src={embedUrl} title={title} loading="lazy" allow="fullscreen; autoplay" allowfullscreen />
     </div>
+  )
+}
+
+{
+  fullBleed && embedUrl && (
+    <script is:inline set:html={fitScript} />
   )
 }
 
@@ -60,17 +73,21 @@ const sized = ratio > 0 && ratio < 5000;
     height: 0;
     padding-top: var(--canva-ratio);
   }
-  /* edge to edge, no card: the design is the page */
+  /* edge to edge, no card: the design is the page. The frame fills the window below the nav
+     and Canva's viewer scrolls inside it: one smooth scroller, and Canva only renders (and
+     plays) what's on screen instead of a 20,000px-tall frame with every video running. */
   .canva-embed.is-bleed {
     width: 100vw;
     left: 0;
     transform: none;
+    height: calc(100dvh - var(--canva-top, 8.5rem));
+    padding-top: 0;
     margin: 0 0 -6rem calc(50% - 50vw); /* also eats the container's bottom padding */
     border: 0;
     border-radius: 0;
   }
   :global(html:has(.canva-embed.is-bleed)) {
-    overflow-x: clip; /* 100vw includes the scrollbar on desktop; don't let it scroll sideways */
+    overflow: hidden; /* the embed is the only scroller on this page */
   }
   .canva-embed iframe {
     position: absolute;
