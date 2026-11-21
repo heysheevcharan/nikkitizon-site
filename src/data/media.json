@@ -1,26 +1,87 @@
 {
-  "_readme": "Every photo/video spot on the site has an id below. Put a file in public/images/ and set its src (e.g. \"/images/hotel-robe.jpg\"). For videos also set poster (a still image). Leave src empty to keep the placeholder.",
-  "avatar": { "src": "", "alt": "Nikki" },
-
-  "hero-1": { "src": "", "alt": "" },
-  "hero-2": { "src": "", "poster": "", "alt": "" },
-  "hero-3": { "src": "", "alt": "" },
-  "hero-4": { "src": "", "poster": "", "alt": "" },
-  "hero-5": { "src": "", "alt": "" },
-
-  "about-main": { "src": "", "alt": "Nikki" },
-  "about-1": { "src": "", "alt": "" },
-  "about-2": { "src": "", "alt": "" },
-  "about-3": { "src": "", "alt": "" },
-  "about-4": { "src": "", "alt": "" },
-
-  "work-stays-1": { "src": "", "alt": "" },
-  "work-stays-2": { "src": "", "poster": "", "alt": "" },
-  "work-stays-3": { "src": "", "alt": "" },
-  "work-food-1": { "src": "", "alt": "" },
-  "work-food-2": { "src": "", "poster": "", "alt": "" },
-  "work-food-3": { "src": "", "alt": "" },
-  "work-cafe-1": { "src": "", "poster": "", "alt": "" },
-  "work-cafe-2": { "src": "", "alt": "" },
-  "work-cafe-3": { "src": "", "alt": "" }
+  "avatar": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
+    "alt": "Nikki"
+  },
+  "hero-1": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-meraki-exterior.jpg",
+    "alt": "Meraki hotel exterior with red lanterns"
+  },
+  "hero-2": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-fly-with-me-to-blr.mp4",
+    "poster": "",
+    "alt": ""
+  },
+  "hero-3": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pillows-and-wine.jpg",
+    "alt": "Hugging hotel pillows with a bottle of wine"
+  },
+  "hero-4": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-slow-morning.mp4",
+    "poster": "",
+    "alt": ""
+  },
+  "hero-5": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-lanterns.jpg",
+    "alt": "Colourful hanging lanterns"
+  },
+  "about-main": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
+    "alt": "Nikki in a robe with coffee and a city skyline"
+  },
+  "about-1": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-three-robes.jpg",
+    "alt": "Three friends in robes and sunglasses"
+  },
+  "about-2": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-latte-art.jpg",
+    "alt": "Latte art from above"
+  },
+  "about-3": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-villa-porch.jpg",
+    "alt": "Villa porch"
+  },
+  "about-4": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-coffee-in-bed.jpg",
+    "alt": "Coffee and a book in bed"
+  },
+  "work-stays-1": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-window.jpg",
+    "alt": "Robe at the window at sunrise"
+  },
+  "work-stays-2": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kdrama-airbnb-pov.mp4",
+    "poster": "",
+    "alt": ""
+  },
+  "work-stays-3": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pool-water.jpg",
+    "alt": "Turquoise pool water"
+  },
+  "work-food-1": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-croissants.jpg",
+    "alt": "Tray of croissants"
+  },
+  "work-food-2": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-latte-and-matcha.mp4",
+    "poster": "",
+    "alt": ""
+  },
+  "work-food-3": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-eggs-benedict.jpg",
+    "alt": "Eggs benedict from above"
+  },
+  "work-cafe-1": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-work-lunch.mp4",
+    "poster": "",
+    "alt": ""
+  },
+  "work-cafe-2": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cup.jpg",
+    "alt": "Tara Inom cup held against a wood wall"
+  },
+  "work-cafe-3": {
+    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cheers.jpg",
+    "alt": "Two Tara Inom drinks raised against the sky"
+  }
 }

@@ -6,7 +6,11 @@
 import media from '../data/media.json';
 
 interface Props {
-  id: string;
+  /** spot name in src/data/media.json (or pass src directly) */
+  id?: string;
+  src?: string;
+  poster?: string;
+  alt?: string;
   kind?: 'photo' | 'video';
   /** CSS aspect-ratio, e.g. "3 / 4", "9 / 16" */
   ratio?: string;
@@ -24,7 +28,7 @@ interface Props {
 }
 
 const {
-  id,
+  id = '',
   kind = 'photo',
   ratio = kind === 'video' ? '9 / 16' : '3 / 4',
   caption,
@@ -37,10 +41,30 @@ const {
   style = '',
 } = Astro.props;
 
-const entry = (media as Record<string, { src?: string; poster?: string; alt?: string }>)[id] ?? {};
-const src = entry.src?.trim();
-const isVideo = src ? /\.(mp4|webm|mov)$/i.test(src) : kind === 'video';
+const fromData = (media as Record<string, { src?: string; poster?: string; alt?: string }>)[id] ?? {};
+const entry = {
+  src: Astro.props.src ?? fromData.src,
+  poster: Astro.props.poster ?? fromData.poster,
+  alt: Astro.props.alt ?? fromData.alt,
+};
+const raw = entry.src?.trim();
+const isVideo = raw ? /\/video\/upload\/|\.(mp4|webm|mov)$/i.test(raw) : kind === 'video';
 const alt = entry.alt || caption || '';
+
+// Cloudinary: ask for the right size and the best format for the browser.
+// e.g. https://res.cloudinary.com/<cloud>/image/upload/v1/x.jpg -> .../upload/f_auto,q_auto,c_limit,w_600/v1/x.jpg
+const isCloudinary = (u?: string) => !!u && /^https:\/\/res\.cloudinary\.com\/.+\/upload\//.test(u);
+const cld = (u: string, t: string) => u.replace('/upload/', `/upload/${t}/`);
+const px = Math.min(1600, Math.round(width * 2)); // 2x for sharp screens
+const src = raw && isCloudinary(raw)
+  ? cld(raw, isVideo ? `q_auto,vc_auto,c_limit,w_${Math.max(540, px)}` : `f_auto,q_auto,c_limit,w_${px}`)
+  : raw;
+const posterRaw = entry.poster?.trim();
+const poster = posterRaw
+  ? isCloudinary(posterRaw) ? cld(posterRaw, `f_auto,q_auto,c_limit,w_${px}`) : posterRaw
+  : isVideo && raw && isCloudinary(raw)
+    ? cld(raw, `so_0,f_auto,q_auto,c_limit,w_${px}`).replace(/\.\w+$/, '.jpg') // first frame of the video
+    : undefined;
 ---
 
 <figure
@@ -58,7 +82,7 @@ const alt = entry.alt || caption || '';
         isVideo ? (
           <video
             data-src={src}
-            poster={entry.poster || undefined}
+            poster={poster}
             muted
             loop
             playsinline

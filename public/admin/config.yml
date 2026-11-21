@@ -7,6 +7,15 @@ backend:
 media_folder: public/images
 public_folder: /images
 
+# Photos and videos can also be uploaded to Cloudinary (sign in with the Cloudinary account).
+# Never put the Cloudinary API secret here; only the cloud name and the API key.
+media_libraries:
+  cloudinary:
+    config:
+      cloud_name: jk5c7qj3
+      api_key: "612159581429127"
+    output_filename_only: false
+
 collections:
   # ── Tags ─────────────────────────────────────────────────────────────────────
   - name: tags
@@ -23,6 +32,371 @@ collections:
         name: title
         widget: string
         hint: "Tag name exactly as it appears on posts (e.g. AI, b2b, self-discovery)"
+
+  # ── Site photos: every photo/video spot on the homepage ──────────────────────
+  - name: site-photos
+    label: "Site photos"
+    files:
+      - name: media
+        label: Homepage photos & videos
+        file: src/data/media.json
+        format: json
+        description: "Upload a photo or video for each spot. Leave a spot empty to keep its placeholder. Uploads go to Cloudinary."
+        fields:
+          - label: "Sidebar avatar (square)"
+            name: avatar
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Hero strip 1 (photo, 3:4)"
+            name: hero-1
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Hero strip 2 (video, 9:16)"
+            name: hero-2
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo or video
+                name: src
+                widget: file
+                required: false
+              - label: Cover image (optional)
+                name: poster
+                widget: image
+                required: false
+                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Hero strip 3 (photo, 3:4)"
+            name: hero-3
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Hero strip 4 (video, 9:16)"
+            name: hero-4
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo or video
+                name: src
+                widget: file
+                required: false
+              - label: Cover image (optional)
+                name: poster
+                widget: image
+                required: false
+                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Hero strip 5 (photo, 3:4)"
+            name: hero-5
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "About me: main photo (4:5)"
+            name: about-main
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "About me: clipped polaroid (3:4)"
+            name: about-1
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "About me: small polaroid (3:4)"
+            name: about-2
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "About me: 'weekend getaway' polaroid (4:3)"
+            name: about-3
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "About me: polaroid under the sticky note (4:3)"
+            name: about-4
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Stays & Experiences: taped photo (3:4)"
+            name: work-stays-1
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Stays & Experiences: 'room tour' video (9:16)"
+            name: work-stays-2
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo or video
+                name: src
+                widget: file
+                required: false
+              - label: Cover image (optional)
+                name: poster
+                widget: image
+                required: false
+                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Stays & Experiences: 'pool vibes' photo (3:4)"
+            name: work-stays-3
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Food & Restaurants: polaroid photo (3:4)"
+            name: work-food-1
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Food & Restaurants: taped video (9:16)"
+            name: work-food-2
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo or video
+                name: src
+                widget: file
+                required: false
+              - label: Cover image (optional)
+                name: poster
+                widget: image
+                required: false
+                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Food & Restaurants: polaroid photo (3:4)"
+            name: work-food-3
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Tara Inom Cafe: taped video (9:16)"
+            name: work-cafe-1
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo or video
+                name: src
+                widget: file
+                required: false
+              - label: Cover image (optional)
+                name: poster
+                widget: image
+                required: false
+                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Tara Inom Cafe: 'cafe vibes' photo (3:4)"
+            name: work-cafe-2
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+          - label: "Tara Inom Cafe: 'new drinks' photo (3:4)"
+            name: work-cafe-3
+            widget: object
+            collapsed: true
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                required: false
+              - label: Description
+                name: alt
+                widget: string
+                required: false
+                hint: "What's in the photo, for screen readers and Google"
+
+  # ── Portfolio page (/portfolio) ─────────────────────────────────────────────
+  - name: portfolio
+    label: "Portfolio"
+    files:
+      - name: portfolio
+        label: Portfolio page
+        file: src/data/portfolio.json
+        format: json
+        description: "Sections of /portfolio. Each section has groups (e.g. 'Hotel room vibes'); each group has photos/videos uploaded to Cloudinary."
+        fields:
+          - label: Sections
+            name: sections
+            widget: list
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Anchor id, name: id, widget: string, hint: "Short id used in links, e.g. stays or food" }
+              - { label: Small label, name: kicker, widget: string, required: false }
+              - label: Groups
+                name: groups
+                widget: list
+                collapsed: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Label, name: label, widget: string, required: false, hint: "Optional, e.g. 'Client · full social media management'" }
+                  - { label: Text, name: text, widget: text, required: false }
+                  - { label: Chips, name: chips, widget: list, required: false }
+                  - label: Layout
+                    name: layout
+                    widget: select
+                    default: collage
+                    options:
+                      - { label: "Scrapbook collage (tilted polaroids)", value: collage }
+                      - { label: "Photo wall (grid of taped prints)", value: wall }
+                      - { label: "Reels row (scrolls sideways)", value: reels }
+                      - { label: "Cards (one video per card, caption = name)", value: cards }
+                      - { label: "Feature card (text left, collage right)", value: feature }
+                  - label: Photos & videos
+                    name: items
+                    widget: list
+                    summary: "{{fields.caption}} {{fields.alt}}"
+                    fields:
+                      - { label: Photo or video, name: src, widget: file }
+                      - { label: "Cover image (videos, optional)", name: poster, widget: image, required: false }
+                      - { label: Description, name: alt, widget: string, required: false }
+                      - { label: Caption, name: caption, widget: string, required: false, hint: "Handwritten label under a polaroid" }
 
   # ── Home page — personal details + bio ──────────────────────────────────────
   - name: home
@@ -104,7 +478,7 @@ collections:
         name: canvaEmbed
         widget: string
         required: false
-        hint: "Optional. In Canva: Share → More → Embed, then paste the embed link or the whole embed code here. The portfolio page uses /ugc-portfolio (the Canva website, so its videos autoplay) — leave that as is."
+        hint: "Optional. In Canva: Share → More → Embed, then paste the embed link or the whole embed code here to show a Canva design on this page."
 
   # ── Blog posts ───────────────────────────────────────────────────────────────
   - name: blog

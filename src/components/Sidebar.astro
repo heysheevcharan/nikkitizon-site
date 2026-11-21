@@ -16,9 +16,10 @@ const nav = [
   { label: 'Work', href: a('#work'), key: 'work' },
   { label: 'Services', href: a('#services'), key: 'services' },
   { label: 'About', href: a('#about'), key: 'about' },
+  { label: 'Portfolio', href: '/portfolio', key: 'portfolio' },
   { label: 'Writing', href: '/blog', key: 'writing', hash: '#writing' },
   ...pages
-    .filter((p) => p.data.showInNav)
+    .filter((p) => p.data.showInNav && p.data.slug !== '/portfolio')
     .sort((x, y) => x.data.navOrder - y.data.navOrder)
     .map((p) => ({ label: p.data.title.replace(/^./, (c) => c.toUpperCase()), href: p.data.slug, key: p.data.slug.replace(/^\//, '') })),
   { label: 'Contact', href: a('#contact'), key: 'contact' },

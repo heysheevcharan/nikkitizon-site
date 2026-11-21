@@ -1,0 +1,359 @@
+{
+  "sections": [
+    {
+      "id": "stays",
+      "title": "Stays & Experiences",
+      "kicker": "hotels \u00b7 airbnbs \u00b7 getaways",
+      "groups": [
+        {
+          "title": "Hotel room vibes",
+          "text": "Slow mornings, crisp sheets and the small details that make someone book the extra night.",
+          "layout": "collage",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-skyline.jpg",
+              "alt": "Nikki in a robe with coffee and a city skyline",
+              "caption": "hotel vibes"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-room-tour.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-in-bed.jpg",
+              "alt": "Reading in bed with a coffee"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-reading-by-lamp.jpg",
+              "alt": "Reading by the bedside lamp in a robe"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-soto-grande.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-three-robes.jpg",
+              "alt": "Three friends in robes and sunglasses",
+              "caption": "with the girls"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-bed-and-book.jpg",
+              "alt": "Open book on a hotel bed"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-thank-you-card.jpg",
+              "alt": "Hotel thank-you card on the sheets"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-stay-one-more-day.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-coffee-in-bed.jpg",
+              "alt": "Coffee and a book in bed"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-on-bed.jpg",
+              "alt": "Sitting on a hotel bed in a robe"
+            }
+          ]
+        },
+        {
+          "title": "Ambiance, exterior & interior stills",
+          "text": "The building, the lobby, the corners people screenshot.",
+          "layout": "wall",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-meraki-exterior.jpg",
+              "alt": "Meraki hotel exterior with red lanterns"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-terracotta-building.jpg",
+              "alt": "Terracotta building with plants"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-art-wall-interior.jpg",
+              "alt": "Interior with framed art and teak chairs"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-villa-porch.jpg",
+              "alt": "Villa porch"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-courtyard.jpg",
+              "alt": "Courtyard with a pond and plants"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-leaf-bar.jpg",
+              "alt": "Leaf Bar sign"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-lanterns.jpg",
+              "alt": "Colourful hanging lanterns"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-window.jpg",
+              "alt": "Robe at the window at sunrise"
+            }
+          ]
+        },
+        {
+          "title": "Airbnb vibes",
+          "text": "POV reels that make a stay feel like a scene from a show.",
+          "layout": "reels",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kdrama-airbnb-pov.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-airbnb-interior.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sheer-curtains.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-window.mp4",
+              "alt": ""
+            }
+          ]
+        },
+        {
+          "title": "Pool days & weekend getaways",
+          "text": "Mood, pool vibes and visual storytelling for slow weekends.",
+          "layout": "collage",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pool-water.jpg",
+              "alt": "Turquoise pool water",
+              "caption": "pool vibes"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-wine-at-dusk.jpg",
+              "alt": "Two wine glasses at dusk",
+              "caption": "mood"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-bonfire.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pink-mugs.jpg",
+              "alt": "Two pink mugs by the pool"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-day.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pillows-and-wine.jpg",
+              "alt": "Hugging hotel pillows with a bottle of wine"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hotel-sunsets.mp4",
+              "alt": ""
+            }
+          ]
+        },
+        {
+          "title": "Hotel lifestyle content",
+          "text": "Day-in-the-life reels from check-in to the last sunset.",
+          "layout": "reels",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-6am-to-10am.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-sunset-room-service.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-slow-morning.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-morning-no-audio.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-qbinn-tusker.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-mood.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-hours.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-pool-flatlay-weekend.mp4",
+              "alt": ""
+            }
+          ]
+        },
+        {
+          "title": "Travel & visual storytelling",
+          "text": "Carousels and travel diaries that take people along.",
+          "layout": "reels",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-fly-with-me-to-blr.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-hoi-an.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-window-shopping.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-where-we-went.mp4",
+              "alt": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food, Cafes & Restaurants",
+      "kicker": "cafes \u00b7 restaurants \u00b7 launches",
+      "groups": [
+        {
+          "title": "Tara Inom Cafe",
+          "label": "Client \u00b7 full social media management",
+          "text": "Reels, posts and planning, end to end.",
+          "chips": [
+            "split-screen overview",
+            "delivery app launch",
+            "new shop launch",
+            "food truck launch"
+          ],
+          "layout": "feature",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cup.jpg",
+              "alt": "Tara Inom cup held against a wood wall"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-work-lunch.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cheers.jpg",
+              "alt": "Two Tara Inom drinks raised against the sky",
+              "caption": "new drinks"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-launch.mp4",
+              "alt": ""
+            }
+          ]
+        },
+        {
+          "title": "Collabs in Bengaluru",
+          "text": "Launch and review reels for food spots around BLR.",
+          "layout": "cards",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-inminutes-blr.mp4",
+              "alt": "",
+              "caption": "InMinutes"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-goan-poiee-blr.mp4",
+              "alt": "",
+              "caption": "Goan Poiee"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kiss-burgers-blr.mp4",
+              "alt": "",
+              "caption": "KISS Burgers"
+            }
+          ]
+        },
+        {
+          "title": "Food stills from hotels & cafes",
+          "text": "Breakfast spreads, bakery trays and the first sip.",
+          "layout": "wall",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-hotel-buffet.jpg",
+              "alt": "Hotel breakfast buffet"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-croissants.jpg",
+              "alt": "Tray of croissants"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-latte-art.jpg",
+              "alt": "Latte art from above"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-sandwich.jpg",
+              "alt": "Holding a breakfast sandwich"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pastries.jpg",
+              "alt": "Tray of pastries"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-rice-bowls.jpg",
+              "alt": "Rice bowls and iced coffee from above"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-eggs-benedict.jpg",
+              "alt": "Eggs benedict from above"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-fresh-bread.jpg",
+              "alt": "Fresh bread at a bakery"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-phone-latte.jpg",
+              "alt": "Shooting a latte on a phone"
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-happy-hour-sign.jpg",
+              "alt": "Sunset happy hours sign"
+            }
+          ]
+        },
+        {
+          "title": "Cafe vibes & food reels",
+          "text": "New drinks, cafe launches and the lunch everyone wants to try.",
+          "layout": "reels",
+          "items": [
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-latte-and-matcha.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-cafe-spread.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-lunch-ugc.mp4",
+              "alt": ""
+            },
+            {
+              "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-shared-meal.mp4",
+              "alt": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+---
+/**
+ * Portfolio: Nikki's work as scrapbook spreads. Everything on this page comes from
+ * src/data/portfolio.json (/admin → Portfolio); photos and videos are hosted on Cloudinary.
+ */
+import Base from '../layouts/Base.astro';
+import Media from '../components/Media.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../site.config';
+import portfolio from '../data/portfolio.json';
+
+type Item = { src: string; poster?: string; alt?: string; caption?: string };
+type Group = {
+  title: string;
+  label?: string;
+  text?: string;
+  chips?: string[];
+  layout?: 'collage' | 'wall' | 'reels' | 'cards' | 'feature';
+  items: Item[];
+};
+type Section = { id: string; title: string; kicker?: string; groups: Group[] };
+const sections = portfolio.sections as Section[];
+
+const home = (await getCollection('home'))[0]?.data;
+const email = home?.email;
+const handles = [home?.instagram, home?.instagram2]
+  .filter(Boolean)
+  .map((u) => ({ url: u!, handle: '@' + u!.replace(/\/+$/, '').split('/').pop() }));
+
+const isVideo = (src: string) => /\/video\/upload\/|\.(mp4|webm|mov)$/i.test(src);
+const tilt = [-3, 2.5, -1.5, 3, -2, 1.5, -2.5, 2];
+const frames = ['polaroid', 'tape', 'clip', 'tape2'] as const;
+let n = 0; // running group number for the little "01" labels
+---
+
+<Base
+  title="Portfolio"
+  description="Nikki Tizon: UGC creator and social media manager for hotels, Airbnbs, cafes and restaurants in the Philippines and India."
+>
+  <!-- ───────── Header ───────── -->
+  <header class="p-head">
+    <p class="kicker reveal">UGC creator · social media manager</p>
+    <h1 class="p-title reveal">The <em>portfolio</em></h1>
+    <p class="p-lede reveal">
+      Videos and photos that capture the feel, vibe and story of a place. Content isn't just about looking good or
+      following trends, it's about giving people the itch to actually show up.
+    </p>
+    <div class="p-meta">
+      <span class="kicker">Hotels · Airbnbs · Experiences · Cafes · Restaurants · Philippines · India</span>
+      <nav class="p-jump" aria-label="portfolio sections">
+        {sections.map((s) => <a href={`#${s.id}`} class="btn">{s.title} ↓</a>)}
+      </nav>
+    </div>
+    <div class="sticky-note sticky-note--red p-note" style="--r:3deg">videos play as you scroll ▶</div>
+    <span class="sticker sticker--desk" style="--r:-12deg; right: 4%; top: 12px;" aria-hidden="true">🎬</span>
+  </header>
+
+  {sections.map((s) => (
+    <section class="section" id={s.id}>
+      <div class="section-head">
+        <h2>{s.title}</h2>
+        {s.kicker && <span class="kicker">{s.kicker}</span>}
+      </div>
+
+      {s.groups.map((g) => {
+        n++;
+        const layout = g.layout ?? 'collage';
+        const head = (
+          <div class="g-head reveal">
+            <span class="kicker">{String(n).padStart(2, '0')}{g.label && ` · ${g.label}`}</span>
+            <h3>{g.title}</h3>
+            {g.text && <p>{g.text}</p>}
+            {g.chips?.length ? <ul class="chips">{g.chips.map((c) => <li>{c}</li>)}</ul> : null}
+          </div>
+        );
+
+        if (layout === 'feature')
+          return (
+            <article class="group feature outline-card">
+              {head}
+              <div class="collage collage--tight">
+                {g.items.map((it, i) => (
+                  <Media
+                    src={it.src} poster={it.poster} alt={it.alt} caption={it.caption}
+                    kind={isVideo(it.src) ? 'video' : 'photo'}
+                    treatment={frames[i % frames.length]} rotate={tilt[i % tilt.length]}
+                    width={isVideo(it.src) ? 190 : 180}
+                  />
+                ))}
+              </div>
+            </article>
+          );
+
+        if (layout === 'cards')
+          return (
+            <article class="group">
+              {head}
+              <div class="cards">
+                {g.items.map((it, i) => (
+                  <div class="outline-card card reveal" style={`--d:${i * 80}ms`}>
+                    <Media src={it.src} poster={it.poster} alt={it.alt || it.caption} kind={isVideo(it.src) ? 'video' : 'photo'} treatment="plain" width={400} style="--w:100%" reveal={false} />
+                    <span class="card-name">{it.caption}</span>
+                    <span class="kicker">Collab · Bengaluru</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          );
+
+        if (layout === 'wall')
+          return (
+            <article class="group">
+              {head}
+              <div class="wall">
+                {g.items.map((it, i) => (
+                  <Media
+                    src={it.src} poster={it.poster} alt={it.alt} caption={it.caption}
+                    kind={isVideo(it.src) ? 'video' : 'photo'}
+                    treatment="tape" rotate={[-2.5, 1.5, -1, 3][i % 4]} width={240} style={`--w:100%; --d:${(i % 4) * 60}ms`}
+                  />
+                ))}
+              </div>
+            </article>
+          );
+
+        if (layout === 'reels')
+          return (
+            <article class="group">
+              {head}
+              <div class="reels" tabindex="0" aria-label={`${g.title} reels`}>
+                {g.items.map((it, i) => (
+                  <Media
+                    src={it.src} poster={it.poster} alt={it.alt || g.title} caption={it.caption}
+                    kind={isVideo(it.src) ? 'video' : 'photo'}
+                    treatment="tape" rotate={[-1.5, 1, -0.5, 1.5][i % 4]} width={220} style={`--d:${Math.min(i, 4) * 60}ms`}
+                  />
+                ))}
+              </div>
+            </article>
+          );
+
+        return (
+          <article class="group">
+            {head}
+            <div class="collage">
+              {g.items.map((it, i) => (
+                <Media
+                  src={it.src} poster={it.poster} alt={it.alt} caption={it.caption}
+                  kind={isVideo(it.src) ? 'video' : 'photo'}
+                  treatment={frames[i % frames.length]} rotate={tilt[i % tilt.length]}
+                  width={isVideo(it.src) ? 210 : 200} style={`--d:${(i % 4) * 60}ms`}
+                />
+              ))}
+            </div>
+          </article>
+        );
+      })}
+    </section>
+  ))}
+
+  <!-- ───────── CTA ───────── -->
+  <section class="section p-cta">
+    <h2 class="p-cta-title reveal">let's work together!</h2>
+    <p class="p-cta-text">UGC creation, full social media management, or a package that fits your goals and budget.</p>
+    {email && <a href={`mailto:${email}`} class="btn btn--fill">{email}</a>}
+    <p class="handles kicker">
+      {handles.map((h) => <a href={h.url} target="_blank" rel="noopener noreferrer">{h.handle}</a>)}
+      <a href="/#services">see what I offer →</a>
+    </p>
+    <footer class="foot">
+      <span>© {new Date().getFullYear()} {SITE.name}</span>
+      <span>Philippines · India</span>
+    </footer>
+  </section>
+</Base>
+
+<style>
+  .p-head { position: relative; padding-top: 24px; }
+  .p-title { font-size: clamp(4rem, 11vw, 9rem); line-height: 0.88; margin: 18px 0 28px; }
+  .p-lede { max-width: 640px; font: 500 clamp(19px, 2vw, 23px)/1.4 var(--font-sans); letter-spacing: -0.02em; }
+  .p-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid var(--red);
+    margin-top: 40px;
+    padding-top: 16px;
+  }
+  .p-jump { display: flex; gap: 10px; flex-wrap: wrap; }
+  .p-note { position: absolute; right: 6%; top: 150px; font-size: 15px; padding: 12px 16px; }
+
+  .group + .group { margin-top: 112px; }
+  .g-head { max-width: 620px; margin-bottom: 36px; }
+  .g-head h3 { font: 600 26px/1.15 var(--font-sans); letter-spacing: -0.02em; margin: 10px 0 10px; }
+  .g-head p { font-size: 17px; margin-bottom: 14px; }
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+
+  .collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 28px 0;
+    padding: 12px 0;
+  }
+  .collage :global(.scrap) { margin: 0 -6px; }
+  .collage :global(.scrap:nth-child(even)) { margin-top: 48px; }
+  .collage--tight { gap: 20px 0; }
+
+  .wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px 28px; padding-top: 12px; }
+
+  .reels {
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 22px 4px 26px;
+    margin: 0 -4px;
+    scrollbar-color: var(--line) transparent;
+  }
+  .reels :global(.scrap) { scroll-snap-align: start; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .card :global(.scrap) { margin-bottom: 10px; }
+  .card-name { font: 400 30px/1.05 var(--font-serif); letter-spacing: -0.02em; }
+
+  .feature { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 32px; padding: 32px; align-items: center; }
+  .feature .g-head { margin: 0; }
+  .feature .g-head h3 { font: 400 56px/0.95 var(--font-serif); letter-spacing: -0.02em; margin: 14px 0 16px; }
+
+  .p-cta { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .p-cta-title { font-style: italic; font-size: clamp(3.5rem, 9vw, 8rem); line-height: 0.9; margin: 0 0 20px; }
+  .p-cta-text { max-width: 520px; font-size: 18px; margin-bottom: 32px; }
+  .handles { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin-top: 24px; }
+  .handles a { text-decoration: none; }
+  .handles a:hover { text-decoration: underline; }
+  .foot {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--red);
+    margin-top: 120px;
+    padding-top: 14px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 1180px) {
+    .feature { grid-template-columns: 1fr; }
+    .p-note { display: none; }
+  }
+  @media (max-width: 900px) {
+    .group + .group { margin-top: 80px; }
+    .collage :global(.scrap) { --w: 46% !important; margin: 0 -4px; }
+    .collage :global(.scrap:nth-child(even)) { margin-top: 28px; }
+    .wall { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+    .reels { margin: 0 -22px; padding: 22px 22px 26px; gap: 18px; }
+    .reels :global(.scrap) { --w: 62vw !important; scroll-snap-align: center; }
+    .cards { grid-template-columns: 1fr; }
+    .feature { padding: 22px 16px; }
+    .feature .g-head h3 { font-size: 44px; }
+  }
+</style>

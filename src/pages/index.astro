@@ -39,7 +39,7 @@ const work = [
     tags: ['hotel vibes', 'airbnb vibes', 'room tours', 'weekend getaways'],
     media: [
       { id: 'work-stays-1', kind: 'photo', treatment: 'tape2', width: 300, rotate: -2 },
-      { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 210, rotate: 3, caption: 'room tour' },
+      { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 210, rotate: 3, caption: 'airbnb pov' },
       { id: 'work-stays-3', kind: 'photo', treatment: 'clip', width: 190, rotate: -4, caption: 'pool vibes' },
     ],
     sticker: '🛎️',
@@ -307,6 +307,7 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
     gap: 16px;
     margin-top: 56px;
   }
+  .strip :global(.scrap) { flex: 0 1 var(--w); width: auto; min-width: 0; }
 
   .head-link { text-decoration: none; white-space: nowrap; }
   .head-link:hover { text-decoration: underline; }
@@ -446,6 +447,8 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
     .board { grid-template-columns: 70px minmax(0, 460px) 1fr; }
     .sticker-col { padding-right: 12px; font-size: 32px; }
     .b-note { right: auto; left: 0; }
+    .board-right :global(.b-1) { left: 0; }
+    .board-right :global(.b-3) { left: 10px; }
   }
 
   @media (max-width: 900px) {
@@ -458,7 +461,7 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
       padding: 16px 22px 20px;
       margin: 40px -22px 0;
     }
-    .strip :global(.scrap) { scroll-snap-align: center; }
+    .strip :global(.scrap) { scroll-snap-align: center; flex: none; width: var(--w); }
     .work-row, .work-row.flip { grid-template-columns: 1fr; gap: 28px; }
     .work-row.flip .work-text { order: 0; }
     .work-row + .work-row { margin-top: 88px; }
