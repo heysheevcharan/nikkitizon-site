@@ -1,118 +1,485 @@
 ---
 import Base from '../layouts/Base.astro';
+import Media from '../components/Media.astro';
 import Newsletter from '../components/Newsletter.astro';
 import { getCollection, render } from 'astro:content';
 import { SITE } from '../site.config';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const latest = posts.slice(0, 4);
 
-const allHomePages = await getCollection('home');
-const homePage = allHomePages[0];
+const homePage = (await getCollection('home'))[0];
 if (!homePage) throw new Error('home.mdx not found in src/content/home/');
 const { Content } = await render(homePage);
 const home = homePage.data;
 
+const firstName = (home.name ?? SITE.name).split(' ')[0].replace(/^./, (c) => c.toUpperCase());
+const roles = home.roles?.length ? home.roles : ['ugc_creator,', 'social_media_manager,'];
+const handles = [home.instagram, home.instagram2]
+  .filter(Boolean)
+  .map((u) => ({ url: u!, handle: '@' + u!.replace(/\/+$/, '').split('/').pop() }));
+
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: home.name ?? SITE.name,
+  name: SITE.name,
   url: Astro.site,
   description: home.tagline,
-  sameAs: [home.twitter, home.github, home.linkedin].filter(Boolean),
+  email: home.email || undefined,
+  sameAs: handles.map((h) => h.url),
 };
 
-function formatDate(date: Date) {
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-}
+// featured work rows (reference: "Featured Work"); the photos are placeholders until set in src/data/media.json
+const work = [
+  {
+    title: 'Stays & Experiences',
+    text: 'Room tours, amenities, pool days and the small moments that make someone book the extra night. For hotels, Airbnbs and getaways.',
+    tags: ['hotel vibes', 'airbnb vibes', 'room tours', 'weekend getaways'],
+    media: [
+      { id: 'work-stays-1', kind: 'photo', treatment: 'tape2', width: 300, rotate: -2 },
+      { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 210, rotate: 3, caption: 'room tour' },
+      { id: 'work-stays-3', kind: 'photo', treatment: 'clip', width: 190, rotate: -4, caption: 'pool vibes' },
+    ],
+    sticker: '🛎️',
+  },
+  {
+    title: 'Food & Restaurants',
+    text: 'Food stills and scroll-stopping reels for hotels, cafes and restaurants, from launches to collabs in Bengaluru.',
+    tags: ['food stills', 'launch reels', 'collabs · BLR'],
+    media: [
+      { id: 'work-food-1', kind: 'photo', treatment: 'polaroid', width: 230, rotate: 3, caption: 'fresh out the oven' },
+      { id: 'work-food-2', kind: 'video', treatment: 'tape', width: 220, rotate: -2 },
+      { id: 'work-food-3', kind: 'photo', treatment: 'polaroid', width: 200, rotate: 5 },
+    ],
+    sticker: '🥐',
+  },
+  {
+    title: 'Tara Inom Cafe',
+    text: 'Full social media management: reels, posts and planning, end to end. From a new shop launch to a delivery app launch and a food truck.',
+    tags: ['client', 'full management', 'new shop launch'],
+    media: [
+      { id: 'work-cafe-1', kind: 'video', treatment: 'tape', width: 220, rotate: 2 },
+      { id: 'work-cafe-2', kind: 'photo', treatment: 'clip', width: 210, rotate: -3, caption: 'cafe vibes' },
+      { id: 'work-cafe-3', kind: 'photo', treatment: 'polaroid', width: 190, rotate: 4, caption: 'new drinks' },
+    ],
+    sticker: '☕',
+  },
+] as const;
+
+const services = [
+  {
+    title: 'UGC Creation',
+    body: "Scroll-stopping videos & photos that show off your brand's story. I create, you own and use.",
+  },
+  {
+    title: 'Full Social Media Management',
+    body: 'End-to-end content, strategy, posting, and management that actually fits how your brand runs. You are hands off, and I take care of the rest.',
+  },
+  { title: 'Social Media Packages', body: 'Flexible tiers to match your goals and budget.' },
+];
+
+const noteTilt = [-1.5, 1, 1.5, -1];
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const mail = home.email ? `mailto:${home.email}` : '#contact';
 ---
 
 <Base title={SITE.name} description={home.tagline || SITE.description}>
   <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 
-  <header class="home-head">
-    <h1>{home.name ?? home.title}</h1>
-    {home.tagline && <p class="text-muted home-tagline">{home.tagline}</p>}
-  </header>
+  <!-- ───────── Hero ───────── -->
+  <section class="hero" id="top">
+    <p class="kicker reveal">Hotels · Airbnbs · Experiences · Cafes · Restaurants &amp; more</p>
+    <h1 class="hero-title">
+      <span aria-hidden="true">👋</span> I'm {firstName}, a
+      <span class="sr-only">{roles.join(' ')}</span>
+      <span class="typed-wrap" aria-hidden="true"><span class="typed" data-words={JSON.stringify(roles)}>{roles[0]}</span><span class="caret"></span></span>
+      {home.heroLine}
+    </h1>
+    <div class="hero-meta">
+      <span class="kicker">Philippines · India</span>
+      <a href="/portfolio" class="btn">See the portfolio →</a>
+    </div>
 
-  <div class="prose">
-    <Content />
-  </div>
+    <div class="strip">
+      <Media id="hero-1" width={150} rotate={-2} treatment="plain" eager />
+      <Media id="hero-2" kind="video" width={190} rotate={1.5} treatment="plain" />
+      <Media id="hero-3" width={160} rotate={-1} treatment="plain" eager />
+      <Media id="hero-4" kind="video" width={210} rotate={2} treatment="plain" />
+      <Media id="hero-5" width={150} rotate={-2.5} treatment="plain" eager />
+    </div>
+  </section>
 
-  {
-    posts.length > 0 && (
-      <>
-        <hr class="divider" />
-        <h2 id="writing" style="margin-top: 0;">writing</h2>
-        <ul class="post-list">
-          {posts.map((post) => (
-            <li class="post-list-item">
-              <span class="log-date post-list-date">{formatDate(post.data.pubDate)}</span>
-              <a href={`/blog/${post.id}`} class="post-list-link">
-                {post.data.title}
-              </a>
-            </li>
+  <!-- ───────── Featured work ───────── -->
+  <section class="section" id="work">
+    <div class="section-head">
+      <h2>Featured work</h2>
+      <a href="/portfolio" class="kicker head-link">full portfolio →</a>
+    </div>
+
+    {work.map((w, i) => (
+      <article class:list={['work-row', { flip: i % 2 === 1 }]}>
+        <div class="work-text reveal">
+          <span class="kicker">0{i + 1}</span>
+          <h3>{w.title}</h3>
+          <p>{w.text}</p>
+          <ul class="chips">
+            {w.tags.map((t) => <li>{t}</li>)}
+          </ul>
+          <a href="/portfolio" class="work-link">See it in the portfolio →</a>
+        </div>
+        <div class="collage">
+          {w.media.map((m, k) => (
+            <Media {...m} style={`--d:${k * 60}ms`} />
           ))}
-        </ul>
-        <a href="/blog" class="text-muted" style="font-size: 0.875rem;">
-          all posts &rarr;
-        </a>
-      </>
-    )
-  }
+          <span class="sticker sticker--desk" style="--r:-10deg; right: 4%; bottom: -14px;" aria-hidden="true">{w.sticker}</span>
+        </div>
+      </article>
+    ))}
+  </section>
 
-  {
-    (home.email || home.github || home.twitter || home.linkedin) && (
-      <>
-        <hr class="divider" />
-        <h2 id="elsewhere" style="margin-top: 0;">elsewhere</h2>
-        <ul class="elsewhere-list">
-          {home.email && (
-            <li>
-              <a href={`mailto:${home.email}`}>email</a>
-            </li>
-          )}
-          {home.github && (
-            <li>
-              <a href={home.github} target="_blank" rel="noopener noreferrer">
-                github
-              </a>
-            </li>
-          )}
-          {home.twitter && (
-            <li>
-              <a href={home.twitter} target="_blank" rel="noopener noreferrer">
-                x.com
-              </a>
-            </li>
-          )}
-          {home.linkedin && (
-            <li>
-              <a href={home.linkedin} target="_blank" rel="noopener noreferrer">
-                linkedin
-              </a>
-            </li>
-          )}
-        </ul>
-      </>
-    )
-  }
+  <!-- ───────── Services ───────── -->
+  <section class="section" id="services">
+    <div class="section-head">
+      <h2>What I offer</h2>
+      <span class="kicker">3 ways to work together</span>
+    </div>
+    <div class="services">
+      {services.map((s, i) => (
+        <div class="outline-card service reveal" style={`--d:${i * 80}ms`}>
+          <span class="kicker">0{i + 1}</span>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
-  {SITE.substackEmbed && <hr class="divider" />}
-  <Newsletter heading />
+  <!-- ───────── About (scrapbook board) ───────── -->
+  <section class="section" id="about">
+    <div class="board">
+      <div class="board-stickers sticker-col" aria-hidden="true">
+        <span style="--r:-8deg">🧳</span>
+        <span style="--r:10deg">🌴</span>
+        <span style="--r:-6deg">📸</span>
+      </div>
+
+      <div class="about-card reveal">
+        <h2>About me</h2>
+        <p class="about-sub">{firstName} would like to share a photo</p>
+        <Media id="about-main" ratio="4 / 5" treatment="plain" width={460} class="about-photo" />
+      </div>
+
+      <div class="board-right">
+        <Media id="about-1" treatment="clip" width={170} rotate={5} class="b-1" />
+        <Media id="about-2" treatment="polaroid" width={150} rotate={-6} class="b-2" />
+        <Media id="about-3" ratio="4 / 3" treatment="polaroid" width={200} rotate={3} caption="weekend getaway" class="b-3" />
+      </div>
+
+      <div class="board-left">
+        <Media id="about-4" ratio="4 / 3" treatment="polaroid" width={190} rotate={-8} class="b-4" />
+        <div class="sticky-note b-note reveal" style="--r:-2deg">
+          <span class="pin" aria-hidden="true">📌</span>
+          Love a good stay or a good coffee? Let's make people want to show up at yours.
+          <a href={mail} class="note-link">Let's work together! →</a>
+        </div>
+      </div>
+
+      <span class="sticker sticker--desk" style="--r:12deg; right: 2%; bottom: 18%;" aria-hidden="true">🥐</span>
+      <span class="sticker sticker--desk" style="--r:-8deg; right: 9%; bottom: 10%;" aria-hidden="true">☕</span>
+    </div>
+
+    <div class="statement prose reveal">
+      <p class="statement-hi">Hello, I'm {firstName}.</p>
+      <Content />
+    </div>
+    <p class="handles kicker">
+      {handles.map((h) => <a href={h.url} target="_blank" rel="noopener noreferrer">{h.handle}</a>)}
+      {home.email && <a href={`mailto:${home.email}`}>{home.email}</a>}
+    </p>
+  </section>
+
+  <!-- ───────── Writing ───────── -->
+  {latest.length > 0 && (
+    <section class="section" id="writing">
+      <div class="section-head">
+        <h2>Letters &amp; notes</h2>
+        <a href="/blog" class="kicker head-link">all {posts.length} essays →</a>
+      </div>
+      <p class="writing-sub">I also write. Mostly about love, work and being seen.</p>
+      <div class="notes">
+        {latest.map((p, i) => (
+          <a href={`/blog/${p.id}`} class="note reveal" style={`--r:${noteTilt[i]}deg; --d:${i * 70}ms`}>
+            <span class="tape" aria-hidden="true"></span>
+            <span class="kicker">{fmt(p.data.pubDate)}</span>
+            <span class="note-title">{p.data.title}</span>
+            {p.data.description && <span class="note-desc">{p.data.description}</span>}
+            <span class="note-read">read →</span>
+          </a>
+        ))}
+      </div>
+      <Newsletter heading />
+    </section>
+  )}
+
+  <!-- ───────── Contact ───────── -->
+  <section class="section contact" id="contact">
+    <h2 class="contact-title reveal">let's work together!</h2>
+    {home.email && <a href={mail} class="btn btn--fill">{home.email}</a>}
+    <p class="handles kicker">
+      {handles.map((h) => <a href={h.url} target="_blank" rel="noopener noreferrer">{h.handle}</a>)}
+    </p>
+    <div class="sticky-note sticky-note--red contact-note" style="--r:4deg">say hi, I don't bite ✨</div>
+    <footer class="foot">
+      <span>© {new Date().getFullYear()} {SITE.name}</span>
+      <span>Philippines · India</span>
+    </footer>
+  </section>
 </Base>
 
-<style>
-  .home-head h1 {
-    margin: 0 0 0.5rem;
+<script>
+  // typewriter: types each word, holds, deletes, moves on
+  const el = document.querySelector<HTMLElement>('.typed');
+  if (el && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const words: string[] = JSON.parse(el.dataset.words || '[]');
+    let w = 0;
+    let n = words[0]?.length ?? 0;
+    let deleting = true;
+    const tick = () => {
+      const word = words[w];
+      if (deleting) {
+        n--;
+        el.textContent = word.slice(0, n);
+        if (n <= 0) {
+          deleting = false;
+          w = (w + 1) % words.length;
+        }
+        setTimeout(tick, 35);
+      } else {
+        const next = words[w];
+        n++;
+        el.textContent = next.slice(0, n);
+        if (n >= next.length) {
+          deleting = true;
+          setTimeout(tick, 1600);
+        } else setTimeout(tick, 70);
+      }
+    };
+    setTimeout(tick, 1800);
   }
-  .home-tagline {
-    margin: 0 0 2rem;
-    font-size: 0.95rem;
+</script>
+
+<style>
+  /* hero */
+  .hero { min-height: 82vh; display: flex; flex-direction: column; justify-content: center; padding-top: 24px; }
+  .hero-title {
+    font-size: clamp(2.75rem, 6.2vw, 5.25rem);
+    line-height: 1;
+    margin: 28px 0 0;
+    max-width: 16ch;
+  }
+  .typed-wrap { display: block; white-space: nowrap; min-height: 1em; }
+  .typed { font-style: italic; }
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 0.8em;
+    margin-left: 4px;
+    background: var(--red);
+    vertical-align: -0.05em;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--red);
+    margin-top: 40px;
+    padding-top: 16px;
+  }
+  .strip {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .head-link { text-decoration: none; white-space: nowrap; }
+  .head-link:hover { text-decoration: underline; }
+
+  /* featured work */
+  .work-row {
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .work-row + .work-row { margin-top: 120px; }
+  .work-row.flip { grid-template-columns: 1fr 32%; }
+  .work-row.flip .work-text { order: 2; }
+  .work-text h3 { font: 600 26px/1.15 var(--font-sans); letter-spacing: -0.02em; margin: 12px 0 14px; }
+  .work-text p { font-size: 17px; line-height: 1.6; }
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+  .work-link { font-weight: 500; }
+  .collage {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0;
+  }
+  .collage :global(.scrap + .scrap) { margin-left: -28px; }
+  .collage :global(.scrap:nth-child(2)) { margin-top: 64px; z-index: 1; }
+
+  /* services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service { min-height: 300px; padding: 24px; display: flex; flex-direction: column; }
+  .service h3 { font-size: 34px; margin: 18px 0 0; }
+  .service p { margin: auto 0 0; padding-top: 24px; font-size: 16px; line-height: 1.55; }
+
+  /* about board */
+  .board {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 460px 1fr;
+    align-items: start;
+    min-height: 720px;
+  }
+  .about-card {
+    grid-column: 2;
+    grid-row: 1;
+    background: var(--paper-hi);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 44px 0 56px;
+    text-align: center;
+    box-shadow: var(--shadow-paper);
+    position: relative;
+    z-index: 1;
+  }
+  .about-card h2 { font-size: 54px; margin: 0; }
+  .about-sub { margin: 10px 0 28px; font-size: 18px; }
+  .about-card :global(.about-photo) { width: 100%; }
+  .about-card :global(.about-photo .scrap-inner),
+  .about-card :global(.about-photo .scrap-media) { border-radius: 0; box-shadow: none; }
+  .sticker-col {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 34px;
+    padding: 110px 36px 0 0;
+    font-size: 40px;
+  }
+  .sticker-col span { display: block; transform: rotate(var(--r)); filter: drop-shadow(0 2px 2px rgba(122, 22, 16, 0.2)); }
+  .board-right { grid-column: 3; grid-row: 1; position: relative; height: 100%; }
+  .board-right :global(.scrap) { position: absolute; }
+  .board-right :global(.b-1) { top: 10px; left: 30px; z-index: 2; }
+  .board-right :global(.b-2) { top: 150px; left: -40px; z-index: 3; }
+  .board-right :global(.b-3) { top: 250px; left: 70px; z-index: 2; }
+  .board-left { grid-column: 1; grid-row: 1; align-self: end; position: relative; height: 340px; z-index: 2; }
+  .board-left :global(.b-4) { position: absolute; left: -30px; bottom: 150px; }
+  .b-note { position: absolute; right: -60px; bottom: 60px; width: 270px; }
+  .note-link { display: block; margin-top: 12px; font-weight: 500; }
+
+  .statement { max-width: 780px; margin: 80px 0 0; }
+  .statement :global(p),
+  .statement-hi { font: 500 clamp(20px, 2.2vw, 26px)/1.35 var(--font-sans); letter-spacing: -0.02em; color: var(--red); }
+  .statement-hi { font-family: var(--font-serif); font-weight: 400; font-size: clamp(32px, 4vw, 44px); margin-bottom: 16px; }
+  .handles { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; }
+  .handles a { text-decoration: none; }
+  .handles a:hover { text-decoration: underline; }
+
+  /* writing */
+  .writing-sub { font-size: 18px; margin: -32px 0 48px; }
+  .notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 40px; margin-bottom: 56px; }
+  .note {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 36px 28px 26px;
+    min-height: 260px;
+    color: var(--red);
+    text-decoration: none;
+    background:
+      linear-gradient(90deg, transparent 15px, var(--line) 15px 16px, transparent 16px),
+      var(--paper-hi);
+    box-shadow: var(--shadow-paper);
+    transform: rotate(var(--r));
+    clip-path: polygon(0 6px, 4% 0, 8% 5px, 13% 1px, 18% 6px, 24% 0, 30% 5px, 36% 1px, 42% 6px, 48% 0, 54% 5px, 60% 1px, 66% 6px, 72% 0, 78% 5px, 84% 1px, 90% 6px, 95% 0, 100% 5px, 100% 100%, 0 100%);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+  }
+  .note .tape { position: absolute; top: 0; left: 50%; }
+  .note .tape::before { top: 2px; }
+  .note-title { font: 400 32px/1.05 var(--font-serif); letter-spacing: -0.02em; }
+  .note-desc { font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .note-read { margin-top: auto; font-weight: 500; font-size: 15px; }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .note:hover { transform: rotate(0deg) translateY(-6px); box-shadow: var(--shadow-lift); }
+  }
+
+  /* contact */
+  .contact { text-align: center; display: flex; flex-direction: column; align-items: center; position: relative; }
+  .contact-title { font-style: italic; font-size: clamp(4rem, 10vw, 8.75rem); line-height: 0.9; margin: 0 0 40px; }
+  .contact .handles { justify-content: center; }
+  .contact-note { position: absolute; right: 0; top: 70px; font-size: 16px; padding: 14px 18px; }
+  .foot {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--red);
+    margin-top: 120px;
+    padding-top: 14px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 1180px) {
+    .board { grid-template-columns: 70px minmax(0, 460px) 1fr; }
+    .sticker-col { padding-right: 12px; font-size: 32px; }
+    .b-note { right: auto; left: 0; }
+  }
+
+  @media (max-width: 900px) {
+    .hero { min-height: auto; padding-top: 16px; }
+    .hero-title { font-size: clamp(2.1rem, 10vw, 2.75rem); }
+    .hero-meta { flex-wrap: wrap; }
+    .strip {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 16px 22px 20px;
+      margin: 40px -22px 0;
+    }
+    .strip :global(.scrap) { scroll-snap-align: center; }
+    .work-row, .work-row.flip { grid-template-columns: 1fr; gap: 28px; }
+    .work-row.flip .work-text { order: 0; }
+    .work-row + .work-row { margin-top: 88px; }
+    .collage :global(.scrap) { --w: 46% !important; }
+    .collage :global(.scrap + .scrap) { margin-left: -10px; }
+    .collage :global(.scrap:nth-child(3)) { margin-top: -30px; }
+    .services { grid-template-columns: 1fr; }
+    .service { min-height: 220px; }
+
+    .board { display: flex; flex-direction: column; align-items: center; min-height: 0; }
+    .sticker-col { display: none; }
+    .about-card { width: 100%; max-width: 460px; }
+    .about-card h2 { font-size: 44px; }
+    .board-right, .board-left { position: static; height: auto; display: flex; justify-content: center; flex-wrap: wrap; width: 100%; margin-top: 28px; }
+    .board-right :global(.scrap), .board-left :global(.scrap) { position: relative !important; inset: auto !important; --w: 44% !important; }
+    .board-right :global(.scrap + .scrap) { margin-left: -16px; }
+    .board-left { flex-direction: column; align-items: center; gap: 36px; }
+    .b-note { position: relative; right: auto; left: auto; bottom: auto; width: 100%; max-width: 320px; }
+
+    .notes { grid-template-columns: 1fr; gap: 36px; }
+    .note { --r: 0deg !important; }
+    .contact-note { position: static; margin-top: 36px; }
   }
 </style>

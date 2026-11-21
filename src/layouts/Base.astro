@@ -1,6 +1,6 @@
 ---
 import SEO from '../components/SEO.astro';
-import Nav from '../components/Nav.astro';
+import Sidebar from '../components/Sidebar.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -9,11 +9,11 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   pubDate?: Date;
+  /** fill the main column edge to edge (no padded page), e.g. the Canva portfolio */
+  bleed?: boolean;
 }
 
-const { title, description, image, type, pubDate } = Astro.props;
-// the homepage passes a full-bleed 3D hero (which carries its own nav); every other page is unchanged
-const hasHero = Astro.slots.has('hero');
+const { title, description, image, type, pubDate, bleed = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,41 +22,64 @@ const hasHero = Astro.slots.has('hero');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#C9281F" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <SEO
-      title={title}
-      description={description}
-      image={image}
-      type={type}
-      pubDate={pubDate}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap"
     />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <SEO title={title} description={description} image={image} type={type} pubDate={pubDate} />
   </head>
-  <body class={hasHero ? 'homepage' : undefined}>
-    {
-      hasHero ? (
-        <>
-          <slot name="hero" />
-          <div class="site-content">
-            <div class="container home-below">
-              <main>
-                <slot />
-              </main>
-            </div>
-          </div>
-        </>
+  <body>
+    <Sidebar />
+    <div class="shell-main grid-paper">
+      {bleed ? (
+        <main><slot /></main>
       ) : (
-        <div class="container">
-          <Nav />
-          <main>
-            <slot />
-          </main>
-        </div>
-      )
-    }
+        <main class="page"><slot /></main>
+      )}
+    </div>
+
+    <script>
+      // videos: load + play only while on screen; pause when scrolled away
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const vids = document.querySelectorAll<HTMLVideoElement>('video[data-src]');
+      const vio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(({ target, isIntersecting }) => {
+            const v = target as HTMLVideoElement;
+            if (isIntersecting) {
+              if (!v.src) v.src = v.dataset.src!;
+              if (!reduce) v.play().catch(() => {});
+            } else v.pause();
+          });
+        },
+        { threshold: 0.35, rootMargin: '200px 0px' }
+      );
+      vids.forEach((v) => {
+        vio.observe(v);
+        v.addEventListener('click', () => (v.paused ? v.play() : v.pause()));
+      });
+
+      // gentle reveal as things scroll in
+      const rio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              rio.unobserve(e.target);
+            }
+          });
+        },
+        { rootMargin: '0px 0px -8% 0px' }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => rio.observe(el));
+    </script>
   </body>
 </html>

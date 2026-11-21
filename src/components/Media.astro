@@ -1,0 +1,85 @@
+---
+/**
+ * One photo or video on the scrapbook. Looks up its file in src/data/media.json by id;
+ * while that src is empty it shows a labeled placeholder of the right shape.
+ */
+import media from '../data/media.json';
+
+interface Props {
+  id: string;
+  kind?: 'photo' | 'video';
+  /** CSS aspect-ratio, e.g. "3 / 4", "9 / 16" */
+  ratio?: string;
+  caption?: string;
+  treatment?: 'polaroid' | 'tape' | 'tape2' | 'clip' | 'plain';
+  /** degrees */
+  rotate?: number;
+  /** px */
+  width?: number;
+  eager?: boolean;
+  /** fade in on scroll (default true) */
+  reveal?: boolean;
+  class?: string;
+  style?: string;
+}
+
+const {
+  id,
+  kind = 'photo',
+  ratio = kind === 'video' ? '9 / 16' : '3 / 4',
+  caption,
+  treatment = 'polaroid',
+  rotate = 0,
+  width = 220,
+  eager = false,
+  reveal = true,
+  class: cls,
+  style = '',
+} = Astro.props;
+
+const entry = (media as Record<string, { src?: string; poster?: string; alt?: string }>)[id] ?? {};
+const src = entry.src?.trim();
+const isVideo = src ? /\.(mp4|webm|mov)$/i.test(src) : kind === 'video';
+const alt = entry.alt || caption || '';
+---
+
+<figure
+  class:list={['scrap', `scrap--${treatment}`, { 'has-caption': caption, reveal }, cls]}
+  style={`--w:${width}px;--r:${rotate}deg;--ratio:${ratio};${style}`}
+>
+  <div class="scrap-inner">
+    {treatment === 'clip' && (
+      <svg class="clip" viewBox="0 0 22 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M15 14V44a5 5 0 0 1-10 0V9a7 7 0 0 1 14 0v33a3 3 0 0 1-6 0V16" stroke-linecap="round" />
+      </svg>
+    )}
+    <div class="scrap-media">
+      {src ? (
+        isVideo ? (
+          <video
+            data-src={src}
+            poster={entry.poster || undefined}
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-label={alt}
+          />
+        ) : (
+          <img src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+        )
+      ) : (
+        <div class="placeholder" role="img" aria-label={`placeholder for ${kind}: ${id}`}>
+          {kind === 'video' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="13" height="14" rx="2" /><path d="M16 10l5-3v10l-5-3" stroke-linejoin="round" /></svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2" /><circle cx="12" cy="13" r="3.5" /><path d="M8 6l1.5-2h5L16 6" stroke-linejoin="round" /></svg>
+          )}
+          <span class="placeholder-kind">{kind}</span>
+          <span class="placeholder-id">{id}</span>
+        </div>
+      )}
+    </div>
+    {caption && <figcaption>{caption}</figcaption>}
+  </div>
+</figure>

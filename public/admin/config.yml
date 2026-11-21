@@ -38,27 +38,32 @@ collections:
           - label: Tagline
             name: tagline
             widget: string
-            hint: "Shown below your name, e.g. 'writer · designer'"
+            hint: "Short bio shown at the bottom of the sidebar"
           - label: Email
             name: email
             widget: string
             required: false
-          - label: GitHub URL
-            name: github
+          - label: Instagram URL
+            name: instagram
             widget: string
             required: false
-          - label: X / Twitter URL
-            name: twitter
+          - label: Second Instagram URL
+            name: instagram2
             widget: string
             required: false
-          - label: LinkedIn URL
-            name: linkedin
+          - label: Headline words
+            name: roles
+            widget: list
+            required: false
+            hint: "The homepage types these out one after another after \"I'm Nikki, a\" (e.g. ugc_creator,)"
+          - label: Headline second line
+            name: heroLine
             widget: string
             required: false
           - label: Bio
             name: body
             widget: markdown
-            hint: "Your homepage bio — supports markdown"
+            hint: "Shown in the About section of the homepage — supports markdown"
 
   # ── Pages — about, now, projects, anything else ─────────────────────────────
   - name: pages

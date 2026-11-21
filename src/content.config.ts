@@ -40,6 +40,12 @@ const home = defineCollection({
     github: z.string().optional(),
     twitter: z.string().optional(),
     linkedin: z.string().optional(),
+    instagram: z.string().optional(),
+    instagram2: z.string().optional(),
+    /** words the homepage headline types out, one after another */
+    roles: z.array(z.string()).optional(),
+    /** second line of the homepage headline */
+    heroLine: z.string().optional(),
   }),
 });
 

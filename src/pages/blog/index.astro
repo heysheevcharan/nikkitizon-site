@@ -32,102 +32,63 @@ function truncate(text: string, maxChars = 120): string {
 ---
 
 <Base
-  title="Blog"
+  title="Writing"
   description={`All posts by ${SITE.name}.`}
 >
-  <h1>blog</h1>
-  <p class="text-muted" style="margin-bottom: 2.5rem;">
-    {posts.length} {posts.length === 1 ? 'post' : 'posts'}
-  </p>
+  <header class="blog-head">
+    <span class="kicker">{posts.length} {posts.length === 1 ? 'essay' : 'essays'}</span>
+    <h1>Writing</h1>
+    <p class="blog-sub">Letters and notes, mostly about love, work and being seen.</p>
+  </header>
 
   {years.map((year) => (
     <section class="year-section">
-      <h2 class="year-heading">{year}</h2>
+      <h2 class="year-heading kicker">{year}</h2>
       <ul class="blog-index-list">
         {grouped[year].map((post) => (
-          <li class="blog-index-item">
-            <div class="blog-index-row">
-              <span class="log-date blog-index-date">
-                {formatDate(post.data.pubDate)}
+          <li>
+            <a href={`/blog/${post.id}`} class="blog-row">
+              <span class="kicker blog-date">{formatDate(post.data.pubDate)}</span>
+              <span class="blog-main">
+                <span class="blog-title">{post.data.title}</span>
+                {post.data.description && <span class="blog-desc">{truncate(post.data.description)}</span>}
               </span>
-              <a href={`/blog/${post.id}`} class="blog-index-title">{post.data.title}</a>
-            </div>
-            {post.data.description && (
-              <p class="text-muted blog-index-desc">
-                {truncate(post.data.description)}
-              </p>
-            )}
+            </a>
           </li>
         ))}
       </ul>
     </section>
   ))}
 
-  {posts.length === 0 && (
-    <p class="text-muted">No posts yet. Check back soon.</p>
-  )}
+  {posts.length === 0 && <p>No posts yet. Check back soon.</p>}
 
-  {SITE.substackEmbed && <hr class="divider" />}
   <Newsletter />
 </Base>
 
 <style>
-  .year-section {
-    margin-bottom: 2.5rem;
+  .blog-head { margin-bottom: 72px; }
+  .blog-head h1 { font-size: clamp(4rem, 9vw, 7rem); line-height: 0.9; margin: 14px 0 18px; }
+  .blog-sub { font-size: 18px; }
+  .year-section { margin-bottom: 64px; }
+  .year-heading { font-family: var(--font-sans); font-size: 12px; margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--red); }
+  .blog-index-list { list-style: none; }
+  .blog-index-list li { border-bottom: 1px solid var(--line); }
+  .blog-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    text-decoration: none;
+    color: var(--red);
   }
-
-  .year-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    margin-top: 0;
-  }
-
-  .blog-index-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .blog-index-item {
-    margin-bottom: 1.25rem;
-  }
-
-  .blog-index-row {
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
-  }
-
-  .blog-index-date {
-    flex-shrink: 0;
-    font-size: 0.8rem;
-    font-variant-numeric: tabular-nums;
-    min-width: 6.5rem;
-  }
-
-  .blog-index-title {
-    text-decoration-color: var(--accent);
-  }
-
-  .blog-index-desc {
-    margin: 0.2rem 0 0 7.5rem;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 500px) {
-    .blog-index-row {
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-    .blog-index-date {
-      min-width: auto;
-    }
-    .blog-index-desc {
-      margin-left: 0;
-      margin-top: 0.35rem;
-    }
+  .blog-date { padding-top: 10px; }
+  .blog-main { display: flex; flex-direction: column; gap: 8px; }
+  .blog-title { font: 400 34px/1.05 var(--font-serif); letter-spacing: -0.02em; transition: translate 0.25s; }
+  .blog-desc { font-size: 15px; line-height: 1.55; opacity: 0.85; }
+  .blog-row:hover .blog-title { font-style: italic; translate: 6px 0; }
+  @media (max-width: 600px) {
+    .blog-row { grid-template-columns: 1fr; gap: 6px; }
+    .blog-date { padding-top: 0; }
+    .blog-title { font-size: 28px; }
   }
 </style>

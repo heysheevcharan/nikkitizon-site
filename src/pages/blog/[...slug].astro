@@ -70,15 +70,17 @@ const olderPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <article>
-    <header style="margin-bottom: 3.5rem;">
+  <a href="/blog" class="kicker back-top">← all writing</a>
+  <article class="sheet">
+    <span class="tape" aria-hidden="true"></span>
+    <header style="margin-bottom: 3rem;">
       <h1 style="margin-bottom: 1.25rem;">{post.data.title}</h1>
       <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-        <time datetime={post.data.pubDate.toISOString()} class="log-date">
+        <time datetime={post.data.pubDate.toISOString()} class="kicker">
           {formatDate(post.data.pubDate)}
         </time>
-        <span class="text-muted">·</span>
-        <span class="text-muted">{readingTime(post.body)}</span>
+        <span class="kicker">·</span>
+        <span class="kicker">{readingTime(post.body)}</span>
 
       </div>
       {post.data.tags && post.data.tags.length > 0 && (
@@ -154,6 +156,10 @@ const olderPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1
 </script>
 
 <style>
+  .back-top { display: inline-block; margin: -40px 0 40px; text-decoration: none; }
+  .back-top:hover { text-decoration: underline; }
+  .post-nav-link { border: 1px solid var(--red) !important; background: var(--paper-hi); }
+  .post-nav .post-nav-title { font-family: var(--font-serif); font-size: 22px; line-height: 1.1; font-weight: 400; }
   .cover-image {
     width: 100%;
     height: auto;

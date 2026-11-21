@@ -1,0 +1,249 @@
+---
+/**
+ * Fixed left sidebar on desktop; a top bar + full-screen menu on phones.
+ * Name, links and the short bio come from src/content/home/home.mdx (/admin → Home).
+ */
+import { getCollection } from 'astro:content';
+import Media from './Media.astro';
+
+const home = (await getCollection('home'))[0]?.data;
+const pages = await getCollection('pages');
+const onHome = Astro.url.pathname === '/';
+const path = Astro.url.pathname;
+const a = (hash: string) => (onHome ? hash : `/${hash}`);
+
+const nav = [
+  { label: 'Work', href: a('#work'), key: 'work' },
+  { label: 'Services', href: a('#services'), key: 'services' },
+  { label: 'About', href: a('#about'), key: 'about' },
+  { label: 'Writing', href: '/blog', key: 'writing', hash: '#writing' },
+  ...pages
+    .filter((p) => p.data.showInNav)
+    .sort((x, y) => x.data.navOrder - y.data.navOrder)
+    .map((p) => ({ label: p.data.title.replace(/^./, (c) => c.toUpperCase()), href: p.data.slug, key: p.data.slug.replace(/^\//, '') })),
+  { label: 'Contact', href: a('#contact'), key: 'contact' },
+];
+const active = (key: string, href: string) =>
+  key === 'writing' ? path.startsWith('/blog') : !href.includes('#') && path.startsWith(href);
+
+const name = home?.name ?? 'Nikki Tizon';
+const email = home?.email;
+const socials = [
+  email && { label: 'Email', href: `mailto:${email}`, icon: 'mail' },
+  home?.instagram && { label: 'Instagram', href: home.instagram, icon: 'ig' },
+  home?.instagram2 && { label: 'Instagram (creator)', href: home.instagram2, icon: 'ig' },
+].filter(Boolean) as { label: string; href: string; icon: string }[];
+const cta = email ? `mailto:${email}` : a('#contact');
+---
+
+<aside class="sidebar" aria-label="site">
+  <a href="/" class="brand">
+    <span class="brand-avatar"><Media id="avatar" ratio="1 / 1" treatment="plain" width={36} reveal={false} /></span>
+    <span class="brand-name">{name.replace(/\b\w/g, (c) => c.toUpperCase())}</span>
+  </a>
+
+  <nav class="side-nav">
+    {nav.map((n) => (
+      <a href={n.href} data-spy={n.hash ?? (n.href.includes('#') ? n.href.slice(n.href.indexOf('#')) : undefined)} aria-current={active(n.key, n.href) ? 'page' : undefined}>
+        {n.label}
+      </a>
+    ))}
+  </nav>
+
+  <div class="side-foot">
+    {home?.tagline && <p class="side-bio">{home.tagline}</p>}
+    <div class="side-socials">
+      {socials.map((s) => (
+        <a href={s.href} class="icon-circle" aria-label={s.label} target={s.icon === 'mail' ? undefined : '_blank'} rel="noopener noreferrer">
+          {s.icon === 'mail' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3.5 6l8.5 7 8.5-7" /></svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" /></svg>
+          )}
+        </a>
+      ))}
+    </div>
+    <a href={cta} class="btn side-cta">Let's work together</a>
+  </div>
+</aside>
+
+<header class="topbar">
+  <a href="/" class="brand">
+    <span class="brand-avatar"><Media id="avatar" ratio="1 / 1" treatment="plain" width={32} reveal={false} /></span>
+    <span class="brand-name">{name.replace(/\b\w/g, (c) => c.toUpperCase())}</span>
+  </a>
+  <button class="menu-btn" type="button" aria-haspopup="dialog" data-menu-open>Menu</button>
+</header>
+
+<dialog class="menu" aria-label="menu">
+  <div class="menu-inner">
+    <button class="menu-btn menu-close" type="button" data-menu-close>Close</button>
+    <nav class="menu-nav">
+      {nav.map((n) => <a href={n.href} data-menu-close>{n.label}</a>)}
+    </nav>
+    <div class="side-socials">
+      {socials.map((s) => (
+        <a href={s.href} class="icon-circle" aria-label={s.label}>
+          {s.icon === 'mail' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3.5 6l8.5 7 8.5-7" /></svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" /></svg>
+          )}
+        </a>
+      ))}
+    </div>
+    <a href={cta} class="btn side-cta">Let's work together</a>
+  </div>
+</dialog>
+
+<style>
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-w);
+    padding: calc(var(--frame) + 38px) 40px calc(var(--frame) + 32px) calc(var(--frame) + 38px);
+    border-right: 1px solid var(--line);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    overflow-y: auto;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--red);
+  }
+  .brand-avatar { display: block; width: 36px; border-radius: 8px; overflow: hidden; flex: none; }
+  .brand-avatar :global(.scrap-inner) { box-shadow: none; }
+  .brand-avatar :global(.placeholder) { padding: 0; }
+  .brand-avatar :global(.placeholder svg) { width: 16px; height: 16px; }
+  .brand-avatar :global(.placeholder-kind),
+  .brand-avatar :global(.placeholder-id) { display: none; }
+  .brand-name { font: 600 19px/1 var(--font-sans); letter-spacing: -0.02em; }
+
+  .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 88px;
+  }
+  .side-nav a {
+    position: relative;
+    font-size: 18px;
+    color: var(--red);
+    text-decoration: none;
+    width: fit-content;
+    transition: translate 0.2s;
+  }
+  .side-nav a:hover { translate: 4px 0; }
+  .side-nav a[aria-current='page']::before,
+  .side-nav a.is-active::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  .side-foot { margin-top: auto; padding-top: 48px; }
+  .side-bio { font-size: 16px; line-height: 1.55; color: var(--red); margin-bottom: 20px; }
+  .side-socials { display: flex; gap: 10px; margin-bottom: 20px; }
+  .icon-circle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--red);
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    color: var(--red);
+    transition: background 0.2s, color 0.2s;
+  }
+  .icon-circle:hover { background: var(--red); color: var(--paper); }
+  .icon-circle svg { width: 19px; height: 19px; }
+  .side-cta { width: 100%; }
+
+  .topbar { display: none; }
+  .menu { display: none; }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0 calc(var(--frame) + 14px);
+      margin-top: var(--frame);
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand-avatar { width: 32px; }
+    .brand-name { font-size: 17px; }
+    .menu-btn {
+      font: 500 15px/1 var(--font-sans);
+      color: var(--red);
+      background: none;
+      border: 1px solid var(--red);
+      border-radius: 999px;
+      padding: 9px 16px;
+      cursor: pointer;
+    }
+    .menu[open] {
+      display: block;
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      border: var(--frame) solid var(--red);
+      background: var(--paper);
+      padding: 0;
+    }
+    .menu::backdrop { background: transparent; }
+    .menu-inner { display: flex; flex-direction: column; min-height: 100%; padding: 20px 24px 32px; }
+    .menu-close { align-self: flex-end; }
+    .menu-nav { display: flex; flex-direction: column; gap: 6px; margin: 40px 0 auto; }
+    .menu-nav a { font: 400 44px/1.1 var(--font-serif); color: var(--red); text-decoration: none; letter-spacing: -0.02em; }
+    .menu .side-socials { margin-top: 40px; }
+  }
+</style>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('dialog.menu');
+  document.querySelector('[data-menu-open]')?.addEventListener('click', () => dlg?.showModal());
+  dlg?.querySelectorAll('[data-menu-close]').forEach((el) => el.addEventListener('click', () => dlg.close()));
+
+  // scroll-spy: highlight the sidebar link of the section in view (home only)
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.side-nav a[data-spy]')];
+  const targets = links
+    .map((l) => [l, document.querySelector(l.dataset.spy!)] as const)
+    .filter(([, t]) => t);
+  if (targets.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          links.forEach((l) => l.classList.toggle('is-active', document.querySelector(l.dataset.spy!) === e.target));
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    targets.forEach(([, t]) => io.observe(t!));
+    const top = document.querySelector('#top'); // back at the hero: no section highlighted
+    if (top) io.observe(top);
+  }
+</script>

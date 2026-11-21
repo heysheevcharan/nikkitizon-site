@@ -77,16 +77,16 @@ const fitScript = `(() => {
     height: 0;
     padding-top: var(--canva-ratio);
   }
-  /* edge to edge, no card: the design is the page. The frame fills the window below the nav
+  /* edge to edge, no card: the design is the page. The frame fills the main column below the top bar
      and Canva's viewer scrolls inside it: one smooth scroller, and Canva only renders (and
      plays) what's on screen instead of a 20,000px-tall frame with every video running. */
   .canva-embed.is-bleed {
-    width: 100vw;
+    width: 100%;
     left: 0;
     transform: none;
-    height: calc(100dvh - var(--canva-top, 8.5rem));
+    height: calc(100dvh - var(--canva-top, 0px));
     padding-top: 0;
-    margin: 0 0 -6rem calc(50% - 50vw); /* also eats the container's bottom padding */
+    margin: 0;
     border: 0;
     border-radius: 0;
   }

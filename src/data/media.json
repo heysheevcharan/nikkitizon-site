@@ -1,0 +1,26 @@
+{
+  "_readme": "Every photo/video spot on the site has an id below. Put a file in public/images/ and set its src (e.g. \"/images/hotel-robe.jpg\"). For videos also set poster (a still image). Leave src empty to keep the placeholder.",
+  "avatar": { "src": "", "alt": "Nikki" },
+
+  "hero-1": { "src": "", "alt": "" },
+  "hero-2": { "src": "", "poster": "", "alt": "" },
+  "hero-3": { "src": "", "alt": "" },
+  "hero-4": { "src": "", "poster": "", "alt": "" },
+  "hero-5": { "src": "", "alt": "" },
+
+  "about-main": { "src": "", "alt": "Nikki" },
+  "about-1": { "src": "", "alt": "" },
+  "about-2": { "src": "", "alt": "" },
+  "about-3": { "src": "", "alt": "" },
+  "about-4": { "src": "", "alt": "" },
+
+  "work-stays-1": { "src": "", "alt": "" },
+  "work-stays-2": { "src": "", "poster": "", "alt": "" },
+  "work-stays-3": { "src": "", "alt": "" },
+  "work-food-1": { "src": "", "alt": "" },
+  "work-food-2": { "src": "", "poster": "", "alt": "" },
+  "work-food-3": { "src": "", "alt": "" },
+  "work-cafe-1": { "src": "", "poster": "", "alt": "" },
+  "work-cafe-2": { "src": "", "alt": "" },
+  "work-cafe-3": { "src": "", "alt": "" }
+}
