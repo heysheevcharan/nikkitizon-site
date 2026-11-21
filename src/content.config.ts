@@ -22,6 +22,8 @@ const pages = defineCollection({
     description: z.string().optional(),
     showInNav: z.boolean().default(true),
     navOrder: z.number().default(99),
+    /** Canva share/embed link (or the whole embed code) to show full-width under the page text */
+    canvaEmbed: z.string().optional(),
   }),
 });
 

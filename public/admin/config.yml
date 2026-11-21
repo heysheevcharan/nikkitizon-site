@@ -95,6 +95,11 @@ collections:
         widget: number
         default: 99
         hint: "Lower = earlier in nav. home=1, blog=2, about=3"
+      - label: Canva Embed
+        name: canvaEmbed
+        widget: string
+        required: false
+        hint: "Optional. In Canva: Share → More → Embed, then paste the embed link or the whole embed code here. The design (videos included) shows under the page text."
 
   # ── Blog posts ───────────────────────────────────────────────────────────────
   - name: blog

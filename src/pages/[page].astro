@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site.config';
+import CanvaEmbed from '../components/CanvaEmbed.astro';
 
 // Generate a route for every page except home (which is index.astro)
 export const getStaticPaths = (async () => {
@@ -27,4 +28,5 @@ const { Content } = await render(page);
   <div class="prose" style="margin-top: 1.5rem;">
     <Content />
   </div>
+  {page.data.canvaEmbed && <CanvaEmbed value={page.data.canvaEmbed} title={`${page.data.title} — ${SITE.name}`} />}
 </Base>
