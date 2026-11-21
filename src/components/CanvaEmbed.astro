@@ -1,7 +1,8 @@
 ---
 /**
  * Embeds a Canva design. Accepts what Canva's Share → Embed gives you: either the
- * link (https://www.canva.com/design/<id>/<token>/view?embed) or the full embed code.
+ * link (https://www.canva.com/design/<id>/<token>/view?embed) or the full embed code,
+ * or a path on this site (e.g. /ugc-portfolio, a Canva website proxied in vercel.json).
  * When the embed code is pasted, its `padding-top: N%` (the design's height ÷ width)
  * is used so the whole design shows at its real shape instead of in a scroll box.
  */
@@ -15,6 +16,9 @@ const { value, title = 'Canva design', fullBleed = false } = Astro.props;
 
 function toEmbedUrl(raw: string): string | null {
   const src = raw.match(/src=["']([^"']+)["']/)?.[1] ?? raw.trim();
+  // a path on this site, e.g. /ugc-portfolio (the published Canva site, proxied by vercel.json
+  // so it can be framed and keeps its autoplaying videos)
+  if (/^\/[\w\-/]*$/.test(src)) return src;
   let url: URL;
   try {
     url = new URL(src.replace(/&amp;/g, '&'));

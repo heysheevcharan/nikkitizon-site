@@ -99,7 +99,7 @@ collections:
         name: canvaEmbed
         widget: string
         required: false
-        hint: "Optional. In Canva: Share → More → Embed, then paste the embed link or the whole embed code here. The design (videos included) shows under the page text."
+        hint: "Optional. In Canva: Share → More → Embed, then paste the embed link or the whole embed code here. The portfolio page uses /ugc-portfolio (the Canva website, so its videos autoplay) — leave that as is."
 
   # ── Blog posts ───────────────────────────────────────────────────────────────
   - name: blog
