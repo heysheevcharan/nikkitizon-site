@@ -57,7 +57,7 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Hero strip 1 (photo, 3:4)"
+          - label: "Featured photo 1 (photo, 3:4)"
             name: hero-1
             widget: object
             collapsed: true
@@ -71,7 +71,7 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Hero strip 2 (video, 9:16)"
+          - label: "Featured photo 2 (video, 9:16)"
             name: hero-2
             widget: object
             collapsed: true
@@ -90,7 +90,7 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Hero strip 3 (photo, 3:4)"
+          - label: "Featured photo 3 (photo, 3:4)"
             name: hero-3
             widget: object
             collapsed: true
@@ -104,7 +104,7 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Hero strip 4 (video, 9:16)"
+          - label: "Featured photo 4 (video, 9:16)"
             name: hero-4
             widget: object
             collapsed: true
@@ -123,7 +123,7 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Hero strip 5 (photo, 3:4)"
+          - label: "Featured photo 5 (photo, 3:4)"
             name: hero-5
             widget: object
             collapsed: true
@@ -207,148 +207,6 @@ collections:
                 widget: string
                 required: false
                 hint: "What's in the photo, for screen readers and Google"
-          - label: "Stays & Experiences: taped photo (3:4)"
-            name: work-stays-1
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Stays & Experiences: 'room tour' video (9:16)"
-            name: work-stays-2
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo or video
-                name: src
-                widget: file
-                required: false
-              - label: Cover image (optional)
-                name: poster
-                widget: image
-                required: false
-                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Stays & Experiences: 'pool vibes' photo (3:4)"
-            name: work-stays-3
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Food & Restaurants: polaroid photo (3:4)"
-            name: work-food-1
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Food & Restaurants: taped video (9:16)"
-            name: work-food-2
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo or video
-                name: src
-                widget: file
-                required: false
-              - label: Cover image (optional)
-                name: poster
-                widget: image
-                required: false
-                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Food & Restaurants: polaroid photo (3:4)"
-            name: work-food-3
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Tara Inom Cafe: taped video (9:16)"
-            name: work-cafe-1
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo or video
-                name: src
-                widget: file
-                required: false
-              - label: Cover image (optional)
-                name: poster
-                widget: image
-                required: false
-                hint: "Shown before the video plays. Leave empty and it's taken from the video's first frame."
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Tara Inom Cafe: 'cafe vibes' photo (3:4)"
-            name: work-cafe-2
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-          - label: "Tara Inom Cafe: 'new drinks' photo (3:4)"
-            name: work-cafe-3
-            widget: object
-            collapsed: true
-            fields:
-              - label: Photo
-                name: src
-                widget: image
-                required: false
-              - label: Description
-                name: alt
-                widget: string
-                required: false
-                hint: "What's in the photo, for screen readers and Google"
-
   # ── Portfolio page (/portfolio): same slides and layout as the Canva site ──────
   - name: portfolio
     label: "Portfolio"

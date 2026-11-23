@@ -55,53 +55,5 @@
     "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-coffee-in-bed.jpg",
     "alt": "Coffee and a book in bed",
     "ratio": "1200 / 1600"
-  },
-  "work-stays-1": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-robe-window.jpg",
-    "alt": "Robe at the window at sunrise",
-    "ratio": "1200 / 2134"
-  },
-  "work-stays-2": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-kdrama-airbnb-pov.mp4",
-    "poster": "",
-    "alt": "",
-    "ratio": "540 / 960"
-  },
-  "work-stays-3": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-pool-water.jpg",
-    "alt": "Turquoise pool water",
-    "ratio": "1200 / 1600"
-  },
-  "work-food-1": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-croissants.jpg",
-    "alt": "Tray of croissants",
-    "ratio": "1200 / 1600"
-  },
-  "work-food-2": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-latte-and-matcha.mp4",
-    "poster": "",
-    "alt": "",
-    "ratio": "540 / 960"
-  },
-  "work-food-3": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-eggs-benedict.jpg",
-    "alt": "Eggs benedict from above",
-    "ratio": "1200 / 1600"
-  },
-  "work-cafe-1": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/video/upload/nikkitizon-site/portfolio/v-tara-inom-work-lunch.mp4",
-    "poster": "",
-    "alt": "",
-    "ratio": "540 / 960"
-  },
-  "work-cafe-2": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cup.jpg",
-    "alt": "Tara Inom cup held against a wood wall",
-    "ratio": "1200 / 1600"
-  },
-  "work-cafe-3": {
-    "src": "https://res.cloudinary.com/jk5c7qj3/image/upload/nikkitizon-site/portfolio/s-tara-inom-cheers.jpg",
-    "alt": "Two Tara Inom drinks raised against the sky",
-    "ratio": "1200 / 1600"
   }
 }
