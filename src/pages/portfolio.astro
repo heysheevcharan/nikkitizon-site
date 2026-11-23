@@ -22,6 +22,8 @@ type Item = {
   align?: string;
   lh?: number;
   italic?: boolean;
+  /** let the text wrap to its box instead of keeping Canva's line breaks */
+  wrap?: boolean;
   captionFor?: number;
 };
 type Slide = { id: string; items: Item[] };
@@ -125,7 +127,7 @@ const firstOf = (id: string) => slides.findIndex((s) => s.id === id);
               const Tag = it.role === 'display' ? 'h2' : it.role === 'heading' || it.role === 'kicker' ? 'h3' : 'p';
               return (
                 <Tag
-                  class:list={['t', `t--${it.role}`, { i: it.italic }]}
+                  class:list={['t', `t--${it.role}`, { i: it.italic, wrap: it.wrap }]}
                   style={`${style};--s:${it.size};--lh:${it.lh ?? 1.35};text-align:${it.align}`}
                   set:html={linkify(it.text!)}
                 />
@@ -231,6 +233,7 @@ const firstOf = (id: string) => slides.findIndex((s) => s.id === id);
     white-space: nowrap;
   }
   .t--body { font-weight: 400; white-space: nowrap; }
+  .t.wrap { white-space: normal; }
 
   .pin { position: absolute; color: var(--red); }
   .phone {

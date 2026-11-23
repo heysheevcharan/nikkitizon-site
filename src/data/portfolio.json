@@ -153,10 +153,10 @@
     {
      "type": "pin",
      "box": {
-      "x": 45.68,
-      "y": 84.14,
-      "w": 1.42,
-      "h": 4.67
+      "x": 35.2,
+      "y": 86.0,
+      "w": 1.2,
+      "h": 4.2
      }
     },
     {
@@ -164,33 +164,34 @@
      "role": "display",
      "text": "HELLO, I'M NIKKI",
      "box": {
-      "x": 35.19,
-      "y": 12.73,
-      "w": 57.75,
-      "h": 12.21
+      "x": 35.2,
+      "y": 12.7,
+      "w": 57.8,
+      "h": 10.0
      },
-     "size": 4.651,
+     "size": 6.0,
      "align": "left",
      "lh": 1.4
     },
     {
      "type": "text",
      "role": "body",
-     "text": "I love creating and sharing content on different social\nplatforms. I specialize in videos and photos that capture\nthe feel, vibe, and story of your brand. For me, content\nisn\u2019t just about looking good or following trends, it\u2019s about\ngiving people the itch to actually show up.\n\nWith 6 years in short-term rental operations and hands-on\nexperience running social media for a cafe, I bring an\ninsider\u2019s understanding of hospitality to every piece of\ncontent I create.",
+     "text": "I love creating and sharing content on different social platforms. I specialize in videos and photos that capture the feel, vibe, and story of your brand. For me, content isn\u2019t just about looking good or following trends, it\u2019s about giving people the itch to actually show up.\n\nWith 6 years in short-term rental operations and hands-on experience running social media for a cafe, I bring an insider\u2019s understanding of hospitality to every piece of content I create.",
      "box": {
-      "x": 34.65,
-      "y": 38.81,
-      "w": 55.51,
-      "h": 40.4
+      "x": 35.2,
+      "y": 36.5,
+      "w": 57.8,
+      "h": 42.0
      },
-     "size": 1.43,
+     "size": 1.95,
      "align": "left",
-     "lh": 1.37
+     "lh": 1.5,
+     "wrap": true
     },
     {
      "type": "text",
      "role": "body",
-     "text": "@nikkindaeyo\nnikkindaeyo@gmail.com",
+     "text": "@nikkindaeyo\ndigitalnikki.t@gmail.com",
      "box": {
       "x": 8.75,
       "y": 86.6,
@@ -204,15 +205,15 @@
     {
      "type": "text",
      "role": "label",
-     "text": "HOTELS \u00b7 AIRBNBS \u00b7 EXPERIENCES \u00b7\nCAFES \u00b7 RESTAURANTS & MORE",
+     "text": "HOTELS \u00b7 AIRBNBS \u00b7 EXPERIENCES \u00b7 CAFES \u00b7 RESTAURANTS & MORE",
      "box": {
-      "x": 42.39,
-      "y": 26.9,
-      "w": 37.04,
-      "h": 8.33
+      "x": 35.2,
+      "y": 27.5,
+      "w": 57.8,
+      "h": 3.0
      },
-     "size": 1.61,
-     "align": "center",
+     "size": 1.45,
+     "align": "left",
      "lh": 1.38
     },
     {
@@ -220,13 +221,13 @@
      "role": "label",
      "text": "PHILIPPINES \u00b7 INDIA",
      "box": {
-      "x": 47.44,
-      "y": 85.22,
-      "w": 20.99,
-      "h": 3.84
+      "x": 37.0,
+      "y": 86.6,
+      "w": 30.0,
+      "h": 3.6
      },
-     "size": 1.484,
-     "align": "center",
+     "size": 1.45,
+     "align": "left",
      "lh": 1.38
     }
    ],
@@ -2198,7 +2199,7 @@
     {
      "type": "text",
      "role": "body",
-     "text": "@createdby_nikkii\nnikkindaeyo@gmail.com",
+     "text": "@createdby_nikkii\ndigitalnikki.t@gmail.com",
      "box": {
       "x": 51.04,
       "y": 74.77,

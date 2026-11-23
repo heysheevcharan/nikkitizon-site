@@ -30,7 +30,7 @@ interface Props {
 const {
   id = '',
   kind = 'photo',
-  ratio = kind === 'video' ? '9 / 16' : '3 / 4',
+  ratio: ratioProp,
   caption,
   treatment = 'polaroid',
   rotate = 0,
@@ -41,7 +41,9 @@ const {
   style = '',
 } = Astro.props;
 
-const fromData = (media as Record<string, { src?: string; poster?: string; alt?: string }>)[id] ?? {};
+const fromData = (media as Record<string, { src?: string; poster?: string; alt?: string; ratio?: string }>)[id] ?? {};
+// frame shape: an explicit ratio wins, then the file's real shape (media.json), then a default
+const ratio = ratioProp ?? (fromData.src ? fromData.ratio : undefined) ?? (kind === 'video' ? '9 / 16' : '3 / 4');
 const entry = {
   src: Astro.props.src ?? fromData.src,
   poster: Astro.props.poster ?? fromData.poster,

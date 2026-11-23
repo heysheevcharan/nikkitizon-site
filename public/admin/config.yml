@@ -381,6 +381,7 @@ collections:
                   - { label: "Line height", name: lh, widget: number, value_type: float, required: false }
                   - { label: Alignment, name: align, widget: select, required: false, options: [left, center, right] }
                   - { label: Italic, name: italic, widget: boolean, required: false }
+                  - { label: "Wrap text to its box", name: wrap, widget: boolean, required: false, hint: "Off = keep the line breaks exactly as typed" }
                   - { label: "Caption of item #", name: captionFor, widget: number, required: false, hint: "Set on a label that sits under a photo/video (0-based item number)" }
                   - { label: "Cut-out image", name: cutout, widget: boolean, required: false }
                   - label: Position
@@ -434,7 +435,7 @@ collections:
             name: roles
             widget: list
             required: false
-            hint: "The homepage types these out one after another after \"I'm Nikki, a\" (e.g. ugc_creator,)"
+            hint: "The homepage types these out one after another after \"I'm Nikki, a\" (e.g. UGC creator,)"
           - label: Headline second line
             name: heroLine
             widget: string

@@ -16,7 +16,7 @@ const { Content } = await render(homePage);
 const home = homePage.data;
 
 const firstName = (home.name ?? SITE.name).split(' ')[0].replace(/^./, (c) => c.toUpperCase());
-const roles = home.roles?.length ? home.roles : ['ugc_creator,', 'social_media_manager,'];
+const roles = (home.roles?.length ? home.roles : ['UGC creator,', 'social media manager,']).map((r) => r.replace(/_/g, ' '));
 const handles = [home.instagram, home.instagram2]
   .filter(Boolean)
   .map((u) => ({ url: u!, handle: '@' + u!.replace(/\/+$/, '').split('/').pop() }));
@@ -31,16 +31,16 @@ const personJsonLd = {
   sameAs: handles.map((h) => h.url),
 };
 
-// featured work rows (reference: "Featured Work"); the photos are placeholders until set in src/data/media.json
+// featured work rows: each frame takes its photo/video's real shape (from src/data/media.json)
 const work = [
   {
     title: 'Stays & Experiences',
     text: 'Room tours, amenities, pool days and the small moments that make someone book the extra night. For hotels, Airbnbs and getaways.',
     tags: ['hotel vibes', 'airbnb vibes', 'room tours', 'weekend getaways'],
     media: [
-      { id: 'work-stays-1', kind: 'photo', treatment: 'tape2', width: 300, rotate: -2 },
-      { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 210, rotate: 3, caption: 'airbnb pov' },
-      { id: 'work-stays-3', kind: 'photo', treatment: 'clip', width: 190, rotate: -4, caption: 'pool vibes' },
+      { id: 'work-stays-1', kind: 'photo', treatment: 'tape2', width: 220, rotate: -2 },
+      { id: 'work-stays-2', kind: 'video', treatment: 'polaroid', width: 220, rotate: 3, caption: 'airbnb pov' },
+      { id: 'work-stays-3', kind: 'photo', treatment: 'clip', width: 260, rotate: -4, caption: 'pool vibes' },
     ],
     sticker: '📷',
   },
@@ -49,9 +49,9 @@ const work = [
     text: 'Food stills and scroll-stopping reels for hotels, cafes and restaurants, from launches to collabs in Bengaluru.',
     tags: ['food stills', 'launch reels', 'collabs · BLR'],
     media: [
-      { id: 'work-food-1', kind: 'photo', treatment: 'polaroid', width: 230, rotate: 3, caption: 'fresh out the oven' },
+      { id: 'work-food-1', kind: 'photo', treatment: 'polaroid', width: 260, rotate: 3, caption: 'fresh out the oven' },
       { id: 'work-food-2', kind: 'video', treatment: 'tape', width: 220, rotate: -2 },
-      { id: 'work-food-3', kind: 'photo', treatment: 'polaroid', width: 200, rotate: 5 },
+      { id: 'work-food-3', kind: 'photo', treatment: 'polaroid', width: 260, rotate: 5 },
     ],
     sticker: '🥐',
   },
@@ -61,8 +61,8 @@ const work = [
     tags: ['client', 'full management', 'new shop launch'],
     media: [
       { id: 'work-cafe-1', kind: 'video', treatment: 'tape', width: 220, rotate: 2 },
-      { id: 'work-cafe-2', kind: 'photo', treatment: 'clip', width: 210, rotate: -3, caption: 'cafe vibes' },
-      { id: 'work-cafe-3', kind: 'photo', treatment: 'polaroid', width: 190, rotate: 4, caption: 'new drinks' },
+      { id: 'work-cafe-2', kind: 'photo', treatment: 'clip', width: 260, rotate: -3, caption: 'cafe vibes' },
+      { id: 'work-cafe-3', kind: 'photo', treatment: 'polaroid', width: 260, rotate: 4, caption: 'new drinks' },
     ],
     sticker: '☕',
   },
@@ -111,12 +111,9 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
     </div>
   </section>
 
-  <!-- ───────── Featured work ───────── -->
+  <!-- ───────── Work ───────── -->
   <section class="section" id="work">
-    <div class="section-head">
-      <h2>Featured work</h2>
-      <a href="/portfolio" class="kicker head-link">full portfolio →</a>
-    </div>
+    <h2 class="sr-only">Work</h2>
 
     {work.map((w, i) => (
       <article class:list={['work-row', { flip: i % 2 === 1 }]}>
@@ -127,7 +124,6 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
           <ul class="chips">
             {w.tags.map((t) => <li>{t}</li>)}
           </ul>
-          <a href="/portfolio" class="work-link">See it in the portfolio →</a>
         </div>
         <div class="collage">
           {w.media.map((m, k) => (
@@ -137,6 +133,9 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
         </div>
       </article>
     ))}
+    <div class="work-more reveal">
+      <a href="/portfolio" class="btn btn--fill">See the full portfolio →</a>
+    </div>
   </section>
 
   <!-- ───────── Services ───────── -->
@@ -204,10 +203,9 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
   {latest.length > 0 && (
     <section class="section" id="writing">
       <div class="section-head">
-        <h2>Letters &amp; notes</h2>
+        <h2>Essays</h2>
         <a href="/blog" class="kicker head-link">all {posts.length} essays →</a>
       </div>
-      <p class="writing-sub">I also write. Mostly about love, work and being seen.</p>
       <div class="notes">
         {latest.map((p, i) => (
           <a href={`/blog/${p.id}`} class="note reveal" style={`--r:${noteTilt[i]}deg; --d:${i * 70}ms`}>
@@ -336,7 +334,7 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
   .work-text p { font-size: 17px; line-height: 1.6; }
   .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
   .chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
-  .work-link { font-weight: 500; }
+  .work-more { display: flex; justify-content: center; margin-top: 96px; }
   .collage {
     position: relative;
     display: flex;
@@ -350,10 +348,11 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
   .collage :global(.scrap:nth-child(2)) { margin-top: 64px; z-index: 1; }
 
   /* services */
-  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .service { min-height: 300px; padding: 24px; display: flex; flex-direction: column; }
-  .service h3 { font-size: 34px; margin: 18px 0 0; }
-  .service p { margin: auto 0 0; padding-top: 24px; font-size: 16px; line-height: 1.55; }
+  #services .section-head { margin-bottom: 28px; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .service { padding: 22px 24px 26px; display: flex; flex-direction: column; }
+  .service h3 { font-size: 32px; line-height: 1; margin: 10px 0 12px; }
+  .service p { margin: 0; font-size: 16px; line-height: 1.55; }
 
   /* about board */
   .board {
@@ -410,7 +409,6 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
   .handles a:hover { text-decoration: underline; }
 
   /* writing */
-  .writing-sub { font-size: 18px; margin: -32px 0 48px; }
   .notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 40px; margin-bottom: 56px; }
   .note {
     position: relative;
@@ -464,6 +462,7 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
   @media (max-width: 900px) {
     .hero { min-height: auto; padding-top: 16px; }
     .hero-title { font-size: clamp(2.1rem, 10vw, 2.75rem); }
+    .typed-wrap { white-space: normal; min-height: 2em; }
     .hero-meta { flex-wrap: wrap; }
     .strip {
       overflow-x: auto;
@@ -479,7 +478,6 @@ const mail = home.email ? `mailto:${home.email}` : '#contact';
     .collage :global(.scrap + .scrap) { margin-left: -10px; }
     .collage :global(.scrap:nth-child(3)) { margin-top: -30px; }
     .services { grid-template-columns: 1fr; }
-    .service { min-height: 220px; }
 
     .board { display: flex; flex-direction: column; align-items: center; min-height: 0; }
     .sticker-col { display: none; }
